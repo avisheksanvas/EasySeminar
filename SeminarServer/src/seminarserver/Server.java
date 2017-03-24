@@ -15,17 +15,18 @@ public class Server
         try
         {
             //System.out.println(i);
-           LiveSeminar.live = new LiveSeminar();
-           //LiveSeminar.live.setVisible(true);
+            LiveSeminar.live = new LiveSeminar();
+            //LiveSeminar.live.setVisible(true);
+            new Login().setVisible(true);
             ServerSocket s1 = new ServerSocket(1342);
             while( true )
             {
                 i++;
-            LiveSeminar.live.papacount=i;
-            Socket ss = s1.accept();
-            LiveSeminar.socket[i]=ss;
-            ListenThread t1 = new ListenThread(ss,i);
-            t1.start();
+                LiveSeminar.live.papacount=i;
+                Socket ss = s1.accept();
+                LiveSeminar.socket[i]=ss;
+                ListenThread t1 = new ListenThread(ss,i);
+                t1.start();
             }
         }
         catch(IOException e)

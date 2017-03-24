@@ -11,7 +11,9 @@ import java.awt.event.MouseListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.PrintStream;
+import java.io.PrintWriter;
 import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
@@ -25,7 +27,7 @@ import javax.swing.ListCellRenderer;
 import java.sql.*;
 import java.util.Enumeration;
 import javax.swing.JOptionPane;
-
+import java.util.Scanner;
 /**
  *
  * @author abhey
@@ -45,19 +47,7 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
      * Creates new form LiveSeminar
      */
     public LiveSeminar() {
-        initComponents();
-        list=this.jList1;
-        this.jList1.addMouseListener(this);
-        live=this;
-        Runtime run= Runtime.getRuntime();
-        try{
-            user=JOptionPane.showInputDialog("Enter user name");
-            password=JOptionPane.showInputDialog("Enter root password");
-            Process proc = run.exec("echo "+password+" | sudo /etc/init.d/vsftpd restart");
-        }
-        catch(Exception e){
-            System.out.println("Error Occurred");
-        }
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("GTK+".equals(info.getName())) {
@@ -74,8 +64,30 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LiveSeminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        initComponents();
+        list=this.jList1;
+        this.jList1.addMouseListener(this);
+        live=this;
+        Runtime run= Runtime.getRuntime();
+        try{
+            user=JOptionPane.showInputDialog("Enter user name");
+            password=JOptionPane.showInputDialog("Enter root password");
+            //String[] cmd = { "echo uselesscoder | sudo -S /etc/init.d/vsftpd restart"};
+            Process proc = run.exec("echo "+password+" | sudo -S /etc/init.d/vsftpd restart");
+            proc.waitFor();
+            Scanner scan = new Scanner(proc.getErrorStream());
+            if(scan.hasNext()){
+                System.out.println(scan.next());
+                JOptionPane.showMessageDialog(null,"Sorry you entered wrong username and password.");
+                System.exit(0);
+            }
+        }
+        catch(Exception e){
+            System.out.println(e+"Error Occurred");
+            System.exit(0);
+        }
+        
     }
-
     public void setData(String str){
         this.TextArea.append(str+"\n");
     }
@@ -109,8 +121,9 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jButton7 = new javax.swing.JButton();
 
-        Question.setLocation(new java.awt.Point(500, 250));
+        Question.setLocation(new java.awt.Point(450, 300));
         Question.setMaximumSize(new java.awt.Dimension(550, 95));
         Question.setMinimumSize(new java.awt.Dimension(550, 95));
         Question.setPreferredSize(new java.awt.Dimension(550, 95));
@@ -170,6 +183,12 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
+        Open.setLocation(new java.awt.Point(500, 200));
+        Open.setMaximumSize(new java.awt.Dimension(460, 420));
+        Open.setMinimumSize(new java.awt.Dimension(460, 420));
+        Open.setPreferredSize(new java.awt.Dimension(460, 420));
+        Open.setResizable(false);
+
         OpenFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OpenFileActionPerformed(evt);
@@ -194,20 +213,24 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 600));
-        setMinimumSize(new java.awt.Dimension(1000, 600));
-        setPreferredSize(new java.awt.Dimension(1000, 600));
+        setLocation(new java.awt.Point(350, 100));
+        setMaximumSize(new java.awt.Dimension(780, 570));
+        setMinimumSize(new java.awt.Dimension(780, 570));
+        setPreferredSize(new java.awt.Dimension(780, 570));
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        jLabel1.setText("List Of Connected Devices");
+        jLabel1.setText("Email ID Of Connected Users");
 
+        TextArea.setEditable(false);
         TextArea.setColumns(20);
+        TextArea.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
         TextArea.setRows(5);
         jScrollPane1.setViewportView(TextArea);
 
         jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         jLabel2.setText("Question Being Asked");
 
+        jButton1.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
         jButton1.setText("Transfer Files To Connected Users");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,48 +243,59 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(jList1);
 
+        jButton7.setText("Make Announcements");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(52, 52, 52))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(89, 89, 89)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(204, 204, 204)
+                .addGap(60, 60, 60)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addGap(103, 103, 103)
                 .addComponent(jButton2)
-                .addGap(107, 107, 107))
+                .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addContainerGap())))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1)
+                    .addComponent(jButton7))
+                .addGap(25, 25, 25))
         );
 
         pack();
@@ -309,7 +343,7 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
             {
                 n++;
             }
-            String sql="Insert into unanswered values('"+n+"','"+LiveSeminar.sbutton[index].ques+"','"+LiveSeminar.sbutton[index].email+"')";
+            String sql="Insert into unanswered values('"+n+"','"+Login.userid+"','"+LiveSeminar.sbutton[index].ques+"','"+LiveSeminar.sbutton[index].email+"')";
             conn.createStatement().execute(sql);
         for(int i=index+1;i<count;i++){
             LiveSeminar.sbutton[i-1]=LiveSeminar.sbutton[i];
@@ -341,7 +375,8 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
             if(output==null)
                 return;
             else{
-                p.println("QUER:2"+output);
+                p.println("QUER:2"+sbutton[index].ques);
+                p.println("QUER:3Ans. "+output);
             }
             for(int i=index+1;i<count;i++){
             LiveSeminar.sbutton[i-1]=LiveSeminar.sbutton[i];
@@ -392,6 +427,10 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
     
     private void OpenFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenFileActionPerformed
         // TODO add your handling code here:
+        if(evt.getActionCommand().compareTo("CancelSelection")==0){
+            Open.setVisible(false);
+        }
+        else {
         File file= OpenFile.getSelectedFile();
         String Path = file.getAbsolutePath();
         String base = "/home/"+user;
@@ -399,7 +438,7 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         try{
             InetAddress inet = LiveSeminar.getFirstNonLoopbackAddress(true,false);
             String temp=inet.toString().substring(1);
-            String fttpPath="ftp://"+user+":"+password+"@"+temp+"/"+relative;
+            String fttpPath="FILE:ftp://"+user+":"+password+"@"+temp+"/"+relative;
             BufferedReader br = null;
             PrintStream p = null;
             for(int i=0;i<papacount;i++){
@@ -407,13 +446,35 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
                 br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
                 p = new PrintStream(sock.getOutputStream());
                 p.println(fttpPath);
+                System.out.println(fttpPath+"Sccuess");
             }
         }
         catch(Exception e){
-            System.out.println("Error Occurred");
+            System.out.println(e+"Error Occurred");
         }
         Open.setVisible(false);
+        }
     }//GEN-LAST:event_OpenFileActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        String str=JOptionPane.showInputDialog("Enter your announcement here");
+        BufferedReader br = null;
+        PrintStream p = null;
+        try{
+            Socket sock;
+            for(int i=0;i<papacount;i++){
+                sock = LiveSeminar.sbutton[i].sock;
+                br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+                p = new PrintStream(sock.getOutputStream());
+                p.println("ANNO:"+str);
+                System.out.println(str+"SUCCESS");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e+"Error Occurred");
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -461,6 +522,7 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
@@ -470,7 +532,7 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(e.getClickCount()==2){
+        if(e.getClickCount()==2&&this.jList1.getSelectedIndex()>=0){
             Question.setVisible(true);
         }
         //To change body of generated methods, choose Tools | Templates.

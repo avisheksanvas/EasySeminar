@@ -32,25 +32,25 @@ public class ListenThread extends Thread  {
         try{
             br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
             p = new PrintStream(sock.getOutputStream());
+            while(true){
             temp=br.readLine();
             System.out.println(temp);
-            if(temp.substring(0,4).compareTo("NAME")==0){
+            if(temp.substring(0,4).compareTo("USER")==0){
                 temp=temp.substring(5,temp.length());
                 int index=temp.indexOf(':');
                 String email=temp.substring(0,index);
                 String IP=temp.substring(index+1,temp.length());
                 System.out.println(email+" "+IP);
-                System.out.println(LiveSeminar.live);
-                LiveSeminar.live.setData(email);
+                LiveSeminar.live.setData("    "+email);
             }
-            if(temp.substring(0,4).compareTo("QUES")==0){
-                temp=temp.substring(5,temp.length());
+            if(temp.substring(0,5).compareTo("SEND:")==0){
+                temp=temp.substring(6,temp.length());
                 int index=temp.indexOf(':');
                 String email=temp.substring(0,index);
                 temp=temp.substring(index+1,temp.length());
                 index=temp.indexOf('#');
                 String IP=temp.substring(0,index);
-                String ques=temp.substring(index+1,temp.length());
+                String ques="Question. "+temp.substring(index+1,temp.length());
                 LiveSeminar.sbutton[LiveSeminar.live.count]=new Struct(ques,email,IP,sock);
                 DefaultListModel model = new DefaultListModel();
                 index=LiveSeminar.live.count;
@@ -60,6 +60,16 @@ public class ListenThread extends Thread  {
                 model.addElement(ques);
                 LiveSeminar.list.setModel(model);
                 LiveSeminar.live.count++;
+            }
+            if(temp.substring(0,5).compareTo("LECT:")==0){
+                temp=temp.substring(6,temp.length());
+                for(int i=0;i<LiveSeminar.live.papacount;i++){
+                    Socket sock1 = LiveSeminar.sbutton[i].sock;
+                    if(!sock1.equals(sock)){
+                        p.println("TEXT:"+temp);
+                    }
+                }
+            }
             }
         }
         catch(Exception e){

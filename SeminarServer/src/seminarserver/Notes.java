@@ -5,6 +5,8 @@
  */
 package seminarserver;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,6 +14,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import javax.swing.ListModel;
 
 /**
  *
@@ -20,8 +24,11 @@ import javax.swing.DefaultListModel;
 public class Notes extends javax.swing.JFrame {
 
     public static Notes note;
+    private static int x=0;
+    private static int y=0;
+    
      
-     Connection conn = null ;
+    Connection conn = null ;
     PreparedStatement pst = null ;
     ResultSet rs = null ;
     /**
@@ -29,6 +36,7 @@ public class Notes extends javax.swing.JFrame {
      */
     public Notes() {
         initComponents();
+        Text.setEnabled(false);
     }
 
     /**
@@ -40,142 +48,289 @@ public class Notes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        Notes = new javax.swing.JFrame();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        jButton4 = new javax.swing.JButton();
+        Text = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
-        jTextField1.setText("jTextField1");
+        Notes.setLocation(new java.awt.Point(500, 250));
+        Notes.setMaximumSize(new java.awt.Dimension(240, 310));
+        Notes.setMinimumSize(new java.awt.Dimension(240, 310));
+        Notes.setPreferredSize(new java.awt.Dimension(240, 310));
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jLabel3.setText("Select Note");
 
-        jTextField2.setText("jTextField2");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jList2.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        jScrollPane2.setViewportView(jList2);
+
+        jButton4.setText("Open Note");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("SAVE");
+        javax.swing.GroupLayout NotesLayout = new javax.swing.GroupLayout(Notes.getContentPane());
+        Notes.getContentPane().setLayout(NotesLayout);
+        NotesLayout.setHorizontalGroup(
+            NotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NotesLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jLabel3)
+                .addContainerGap(58, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NotesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(NotesLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addComponent(jButton4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        NotesLayout.setVerticalGroup(
+            NotesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NotesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Open Notes For Modification");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("SEE NOTES");
+        jButton2.setText("See Notes");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jList1);
+
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jLabel1.setText("Manage Notes");
+
+        jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jLabel2.setText("Review Unanswered Questions");
+
+        jButton3.setText("Fetch Questions");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addComponent(jButton2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(jButton1)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addGap(54, 54, 54)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(Text, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(jButton2)
+                .addGap(105, 105, 105)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(135, 135, 135))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addComponent(Text, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_TextActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-          String cnote= jTextField2.getText();
-        String q = "SELECT * FROM notes";
-        conn = MySqlConnect.connection();
-            
-        try {
+        if(x==0){
+         x=1;
+         jButton1.setText("Save Note");
+         DefaultListModel model1= new DefaultListModel();
+         String q = "SELECT * FROM notes where userid= "+Login.userid+";";
+         conn = MySqlConnect.connection();
+         String noter;
+         try {
             pst = conn.prepareStatement(q);
             rs = pst.executeQuery();
-            int n = 0 ;
-            while(rs.next())
-            {
-                n++;
+            Notes.setVisible(true);
+            DefaultListModel model = new DefaultListModel();
+            while(rs.next()){
+                String notename = rs.getString("name");
+                model.addElement(notename);
             }
-            String sql = "INSERT INTO seminarServer.notes(numind,note) VALUES('"+n+"','"+cnote+"')";
-        
-            conn.createStatement().execute(sql);
-            
-            } 
+            jList2.setModel(model);
+         } 
         catch (SQLException ex) {
-        System.out.println("ERROR IN REGISTERING");   
+            System.out.println(ex+"Error Occurred");   
         }
-       
+        }
+        else{
+            String note = Text.getText();
+            
+            conn=MySqlConnect.connection();
+            try{
+                if(y==0){
+                    String text=Text.getText();
+                    String notename=Text.getText().substring(0,text.indexOf('\n'));
+                    String q="alter table notes set note="+text.substring(text.indexOf('\n')+1,text.length())+"where name="+notename+";";
+                    pst = conn.prepareStatement(q);
+                    rs = pst.executeQuery();
+                    x=0;
+                    jButton1.setText("Open Notes For Modification");
+                    Text.setEnabled(false);
+                }
+                else{
+                    String text = Text.getText();
+                    String name=JOptionPane.showInputDialog("Enter title for this note");
+                    int q=0;
+                    String qu="select * from notes";
+                    pst = conn.prepareStatement(qu);
+                    rs = pst.executeQuery();
+                    while(rs.next()){
+                        q++;
+                    }
+                    qu="insert into notes values('"+q+"','"+Login.userid+"','"+name+"','"+text+"');";
+                    pst = conn.prepareStatement(qu);
+                    pst.executeUpdate();
+                }
+            }
+            catch(Exception e){
+                System.out.print(e+"Exception Occurred");
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        DefaultListModel model1= new DefaultListModel();
-          String q = "SELECT * FROM notes";
+            DefaultListModel model1= new DefaultListModel();
+            String q = "SELECT * FROM notes where userid= "+Login.userid+";";
         conn = MySqlConnect.connection();
          String noter;
          try {
             pst = conn.prepareStatement(q);
             rs = pst.executeQuery();
-            
-            while(rs.next())
-            {
-             
-               noter=rs.getString("note");   
-               model1.addElement(noter);
+            Notes.setVisible(true);
+            DefaultListModel model = new DefaultListModel();
+            while(rs.next()){
+                String notename = rs.getString("name");
+                model.addElement(notename);
             }
-           jList1.setModel(model1);   
+            jList2.setModel(model);
+            Text.setEnabled(false);
          } 
         catch (SQLException ex) {
-        System.out.println("ERROR IN REGISTERING");   
+            System.out.println(ex+"Error Occurred");   
         }
-       
-        
-        
-        
-        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        conn= MySqlConnect.connection();
+        try{
+            String q="select * from unanswered where userid="+Login.userid+";";
+            pst = conn.prepareStatement(q);
+            rs = pst.executeQuery();
+            DefaultListModel model = new DefaultListModel();
+            while(rs.next()){
+                String ques=rs.getString("question");
+                model.addElement(ques+"\nReply To"+rs.getString("email"));
+            }
+            jList1.setModel(model);
+        }
+        catch(Exception e){
+            System.out.println(e+"Error Occurred");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        String str= jList2.getSelectedValue();
+        conn= MySqlConnect.connection();
+        String note;
+        try{
+          String q="Select *from notes where name="+str+";";
+          pst =conn.prepareStatement(q);
+          rs = pst.executeQuery();
+          if(rs.next()){
+              y=0;
+              note= rs.getString("note");
+              String noteName=rs.getString("name");
+              Text.setText(noteName+"\n"+note);
+              if(y==0){
+                jButton1.setText("Save Note");
+                Text.setEnabled(true);
+              }
+          }
+          else{
+              y=1;
+          }
+          Notes.setVisible(false);
+        }
+        catch(Exception e){
+            System.out.println(e+"Error Occurred");
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,7 +343,7 @@ public class Notes extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("GTK+".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -213,11 +368,19 @@ public class Notes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame Notes;
+    private javax.swing.JTextField Text;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
-}
+
+    }
