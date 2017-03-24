@@ -1,0 +1,7 @@
+<android.support.v7.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recycler_view"
+    android:scrollbars="horizontal"
+    android:scrollbarSize="0dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />

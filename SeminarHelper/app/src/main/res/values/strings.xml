@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">SeminarHelper</string>
+    <string name="server_address">Server Address</string>
+    <string name="server_port">Server Port</string>
+    <string name="app_logo_description">App Logo Here</string>
+    <string name="connect">Connect</string>
+    <string name="user_name">Your Username</string>
+    <string name="homepage">Homepage</string>
+    <string name="queries">Queries</string>
+    <string name="files">Files</string>
+    <string name="title_activity_main">Homepage</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="send">Send Query</string>
+    <string name="message_here">Your Message Here</string>
+    <string name="older_messages">Older Messages</string>
+    <string name="nothing_to_display">No Files To Display</string>
+    <string name="about">About</string>
+</resources>

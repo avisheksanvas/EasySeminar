@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.forceawakened.www.seminarhelper.QueryFragment">
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:hint="@string/message_here" />
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/edit_text"/>
+    <TextView
+        android:id="@+id/older_messages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/older_messages"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/send"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_below="@+id/older_messages"/>
+</RelativeLayout>
