@@ -6,6 +6,9 @@
     <item android:id="@+id/queries"
         android:icon="@drawable/navbar_bullet"
         android:title="@string/queries"/>
+    <item android:id="@+id/announce"
+        android:icon="@drawable/navbar_bullet"
+        android:title="@string/announce"/>
     <item android:id="@+id/files"
         android:icon="@drawable/navbar_bullet"
         android:title="@string/files"/>

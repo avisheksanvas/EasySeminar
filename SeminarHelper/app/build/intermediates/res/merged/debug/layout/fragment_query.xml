@@ -27,9 +27,14 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/send"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="320dp"
-        android:layout_below="@+id/older_messages"/>
+        android:layout_below="@+id/older_messages">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </RelativeLayout>

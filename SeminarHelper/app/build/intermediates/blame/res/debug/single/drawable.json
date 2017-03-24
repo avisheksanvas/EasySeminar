@@ -1,11 +1,15 @@
 [
     {
-        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
-        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_ab_back_material.xml"
-    },
-    {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/background.xml",
+        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/src/main/res/drawable/background.xml"
+    },
+    {
+        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
+        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
@@ -110,6 +114,10 @@
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/background2.xml",
+        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/src/main/res/drawable/background2.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",

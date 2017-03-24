@@ -1,6 +1,7 @@
 package com.forceawakened.www.seminarhelper;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,10 +33,20 @@ public class QueryAdapter extends RecyclerView.Adapter<QueryAdapter.ViewHolder> 
         String text = arrayList.get(position);
         holder.textView.setText(text.substring(1));
         if(text.charAt(0) == '1'){
-            holder.textView.setBackgroundColor(context.getResources().getColor(R.color.green));
+            holder.textView.setBackgroundColor(context.getResources().getColor(R.color.white));
+            holder.textView.setTextSize(22);
+        }
+        else if (text.charAt(0) == '2'){
+            holder.textView.setTextColor(context.getResources().getColor(R.color.white));
+            holder.textView.setBackgroundColor(context.getResources().getColor(R.color.darkblue));
+            holder.textView.setTextSize(16);
+            holder.textView.setTypeface(null, Typeface.ITALIC);
         }
         else{
-            holder.textView.setBackgroundColor(context.getResources().getColor(R.color.cyan));
+            holder.textView.setTextColor(context.getResources().getColor(R.color.white));
+            holder.textView.setBackgroundColor(context.getResources().getColor(R.color.darkblue));
+            holder.textView.setTextSize(22);
+            holder.textView.setTypeface(null, Typeface.BOLD);
         }
         holder.textView.setPadding(8, 8, 8, 8);
     }

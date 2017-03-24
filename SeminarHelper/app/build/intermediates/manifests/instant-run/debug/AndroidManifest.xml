@@ -21,7 +21,8 @@
         >
         <activity
             android:name="com.forceawakened.www.seminarhelper.ConnectionActivity"
-            android:launchMode="singleTop" >
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,10 +32,12 @@
         <activity
             android:name="com.forceawakened.www.seminarhelper.MainActivity"
             android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <service android:name="com.forceawakened.www.seminarhelper.SocketService" >
-        </service>
+        <service android:name="com.forceawakened.www.seminarhelper.SocketService" />
+
+        <activity android:name="com.forceawakened.www.seminarhelper.MicActivity" />
     </application>
 
 </manifest>

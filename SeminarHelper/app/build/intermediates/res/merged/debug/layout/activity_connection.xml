@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="com.forceawakened.www.seminarhelper.ConnectionActivity">
     <ImageView
         android:id="@+id/app_logo"
@@ -20,18 +21,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/server_address"
+        android:maxLines="1"
         android:layout_below="@+id/app_logo"/>
     <EditText
         android:id="@+id/server_port"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/server_port"
+        android:maxLines="1"
         android:layout_below="@+id/server_address"/>
     <EditText
-        android:id="@+id/user_name"
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/user_name"
+        android:hint="@string/email"
+        android:maxLines="1"
         android:layout_below="@+id/server_port"/>
     <Button
         android:id="@+id/connect"
@@ -39,5 +43,5 @@
         android:layout_height="wrap_content"
         android:text="@string/connect"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/user_name"/>
+        android:layout_below="@+id/email"/>
 </RelativeLayout>

@@ -1,9 +1,12 @@
 package com.forceawakened.www.seminarhelper;
 
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Binder;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
@@ -23,12 +26,13 @@ import java.net.Socket;
  */
 
 public class SocketService extends Service {
-    String filename1 = "home.txt";
-    String filename2 = "query.txt";
-    String filename3 = "filelist.txt";
-    Socket socket;
-    Integer countMsg = 0;
-    OutputStream out1, out2, out3;
+    private String filename1 = "home.txt";
+    private String filename2 = "query.txt";
+    private String filename3 = "filelist.txt";
+    private String filename4 = "announce.txt";
+    private Socket socket;
+    public Integer countMsg = 0;
+    OutputStream out1, out2, out3, out4;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -72,12 +76,31 @@ public class SocketService extends Service {
         }
     }
 
+    public void sendAnnounce(String msg){
+        try {
+            out4.write(msg.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void displayNotification(){
+        String delete_notif = "DELETE_NOTIFICATION";
+        BroadcastReceiver receiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                countMsg = 0;
+                unregisterReceiver(this);
+            }
+        };
+        Intent intent = new Intent(delete_notif);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+        registerReceiver(receiver, new IntentFilter(delete_notif));
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
                         .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle("Seminar Helper: Unread Messages")
-                        .setContentText("You have " + countMsg + " unread messages.");
-        countMsg = 0;
+                        .setContentTitle("Seminar Helper")
+                        .setContentText("You have " + countMsg + " unread messages.")
+                        .setDeleteIntent(pendingIntent);
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(0, builder.build());
     }
@@ -102,6 +125,7 @@ public class SocketService extends Service {
                     out1 = openFileOutput(filename1, Context.MODE_APPEND);
                     out2 = openFileOutput(filename2, Context.MODE_APPEND);
                     out3 = openFileOutput(filename3, Context.MODE_APPEND);
+                    out4 = openFileOutput(filename4, Context.MODE_APPEND);
                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     String text, key, value;
                     while((text = in.readLine()) != null) {
@@ -121,10 +145,14 @@ public class SocketService extends Service {
                         else if("FILE".equals(key)){
                             sendFile(value);
                         }
+                        else if("ANNO".equals(key)){
+                            sendAnnounce(value);
+                        }
                     }
                     out1.close();
                     out2.close();
                     out3.close();
+                    out4.close();
                 }
                 catch (Exception e) {
                     System.out.println("Service: while reading/writing socket.");

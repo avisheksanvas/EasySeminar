@@ -12,6 +12,42 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_7b42622de8a0ab89c1baf0108ab23561b381b834/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="93c673b165feb73444e2f175b1d1c91a570a87dc">
+        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f1e4e27308d241d65081187a2f7ff25204207b34/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_473fe84b5441bfc539b5f2677573c5720dba291a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/forceawakened/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_f0ede94dd5aaa4cc4365e9845d39126cbfa368e0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -39,15 +75,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_7b42622de8a0ab89c1baf0108ab23561b381b834/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -66,29 +93,11 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8f1e67dc1632acf3dbf4c65b15b723911f1a49d1">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f1e4e27308d241d65081187a2f7ff25204207b34/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_473fe84b5441bfc539b5f2677573c5720dba291a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="47d6b3030e0050ac845b5f11dea49bf6d85f588b">
+        sha1="2f873ea9046ee54b2c36b98d62b6c5da0ef9784f">
         <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_20c55ac6af11c74d69aec6050bf0f06885314f1a/classes.dex" />
     </item>
     <item
@@ -117,15 +126,6 @@
         revision="25.0.2"
         sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
         <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_ea75b1acf082c3212a5300f83e5bc943edde558d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_f0ede94dd5aaa4cc4365e9845d39126cbfa368e0/classes.dex" />
     </item>
     <item
         is-multidex="true"

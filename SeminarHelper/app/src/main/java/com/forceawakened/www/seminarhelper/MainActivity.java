@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Callback callback;
     private boolean mIsBound;
     private Integer countBackPress;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mDrawerLayout.addDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();
         //init
+        email = getIntent().getStringExtra("EMAIL");
         countBackPress = 0;
         File outputDir = getCacheDir();
         try {
@@ -82,6 +84,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
             File.createTempFile("filelist", "txt", outputDir);
+            file = getFileStreamPath("announce.txt");
+            if(file.exists()) {
+                File dir = getFilesDir();
+                boolean deleted = file.delete();
+                if(deleted){
+                    System.out.println("Original Cache announce.txt deleted.");
+                }
+            }
+            File.createTempFile("announce", "txt", outputDir);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -144,15 +155,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else{
-            ++countBackPress;
-            if(countBackPress == 1){
-                Toast.makeText(this, "Press Back Again To Logout.", Toast.LENGTH_SHORT).show();
-            }
-            else{
-                countBackPress = 0;
-                super.onBackPressed();
-            }
+        }
+        ++countBackPress;
+        if(countBackPress == 1){
+            Toast.makeText(this, "Press Back Again To Logout.", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            countBackPress = 0;
+            super.onBackPressed();
         }
     }
 
@@ -176,17 +186,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.queries) {
             mToolbar.setTitle("Queries");
             Fragment queryfragment = new QueryFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("EMAIL", email);
+            queryfragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.load_content, queryfragment)
                     .commit();
             where = 2;
-        } else if (id == R.id.files) {
+        }else if (id == R.id.announce) {
+            mToolbar.setTitle("Announcements");
+            Fragment announcefragment = new AnnounceFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.load_content, announcefragment)
+                    .commit();
+            where = 3;
+        }
+        else if (id == R.id.files) {
             mToolbar.setTitle("Get Files");
             FileListFragment listfragment = new FileListFragment();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.load_content, listfragment)
                     .commit();
-            where = 3;
+            where = 4;
         }
         else if (id == R.id.about){
             mToolbar.setTitle("About");
@@ -194,7 +215,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.load_content, aboutfragment)
                     .commit();
-            where = 4;
+            where = 5;
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;

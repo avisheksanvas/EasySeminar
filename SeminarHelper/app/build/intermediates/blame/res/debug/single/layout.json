@@ -20,12 +20,16 @@
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/src/main/res/layout/activity_main.xml"
     },
     {
+        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_screen_simple.xml"
     },
     {
-        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
-        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_search_dropdown_item_icons_2line.xml"
+        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/fragment_announce.xml",
+        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/src/main/res/layout/fragment_announce.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
@@ -226,6 +230,10 @@
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/activity_mic.xml",
+        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/src/main/res/layout/activity_mic.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",

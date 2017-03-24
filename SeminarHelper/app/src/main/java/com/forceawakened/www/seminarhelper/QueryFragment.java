@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -30,7 +31,9 @@ public class QueryFragment extends Fragment {
     private QueryAdapter adapter;
     private EditText msgText;
     private Button sendBtn;
+    private String email;
     private String filename = "query.txt";
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     public QueryFragment() {
         arrayList = new ArrayList<>();
@@ -40,6 +43,7 @@ public class QueryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_query, container, false);
+        email = getArguments().getString("EMAIL");
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         msgText = (EditText) view.findViewById(R.id.edit_text);
         sendBtn = (Button) view.findViewById(R.id.send);
@@ -47,7 +51,10 @@ public class QueryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String msg = String.valueOf(msgText.getText());
-                SocketHandler.send("SEND:" + msg);
+                if(msg == null || "".equals(msg) || "\n".equals(msg)){
+                    return;
+                }
+                SocketHandler.send("SEND:" + email + "::#" + msg);
                 msgText.setText("");
                 Toast.makeText(sendBtn.getContext(), "Message Sent.", Toast.LENGTH_SHORT).show();
                 try {
@@ -65,6 +72,13 @@ public class QueryFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         adapter = new QueryAdapter(getActivity(), arrayList);
         recyclerView.setAdapter(adapter);
+        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_layout);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                (new LoadData()).execute();
+            }
+        });
         (new LoadData()).execute();
         return view;
     }
@@ -81,6 +95,7 @@ public class QueryFragment extends Fragment {
                     InputStreamReader isr = new InputStreamReader(fis);
                     BufferedReader br = new BufferedReader(isr);
                     String line;
+                    arrayList.clear();
                     while ((line = br.readLine()) != null) {
                         arrayList.add(line);
                         System.out.print(line);
@@ -105,6 +120,9 @@ public class QueryFragment extends Fragment {
             }
             else{
                 //do stuff
+            }
+            if(swipeRefreshLayout.isRefreshing()){
+                swipeRefreshLayout.setRefreshing(false);
             }
         }
     }

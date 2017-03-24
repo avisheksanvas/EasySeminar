@@ -1,20 +1,16 @@
 package com.forceawakened.www.seminarhelper;
 
-import android.app.ListFragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -23,13 +19,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class FileListFragment extends Fragment implements FileListAdapter.Callback{
     private FileListAdapter adapter;
     private ArrayList<String> arrayList;
-    String filename="filelist.txt";
+    private String filename="filelist.txt";
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     public FileListFragment() {
         arrayList = new ArrayList<>();
@@ -44,6 +39,13 @@ public class FileListFragment extends Fragment implements FileListAdapter.Callba
         recyclerView.setLayoutManager(layoutManager);
         adapter = new FileListAdapter(this, arrayList);
         recyclerView.setAdapter(adapter);
+        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_layout);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                (new LoadData()).execute();
+            }
+        });
         (new LoadData()).execute();
         return view;
     }
@@ -67,6 +69,7 @@ public class FileListFragment extends Fragment implements FileListAdapter.Callba
                     InputStreamReader isr = new InputStreamReader(fis);
                     BufferedReader br = new BufferedReader(isr);
                     String line;
+                    arrayList.clear();
                     while ((line = br.readLine()) != null) {
                         arrayList.add(line);
                     }
@@ -90,6 +93,9 @@ public class FileListFragment extends Fragment implements FileListAdapter.Callba
             }
             else{
                 //do stuff
+            }
+            if(swipeRefreshLayout.isRefreshing()){
+                swipeRefreshLayout.setRefreshing(false);
             }
         }
     }

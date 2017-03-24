@@ -14,7 +14,8 @@
         >
         <activity
             android:name=".ConnectionActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,10 +25,12 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <service android:name=".SocketService">
 
-        </service>
+        <service android:name=".SocketService"></service>
+
+        <activity android:name=".MicActivity"></activity>
     </application>
 
 </manifest>

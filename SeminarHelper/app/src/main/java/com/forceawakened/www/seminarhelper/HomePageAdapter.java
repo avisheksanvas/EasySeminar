@@ -32,11 +32,7 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         String text = arrayList.get(position);
-        text = text.substring(text.lastIndexOf('/') + 1);
-        holder.textView.setText(text);
-        if(position == 0){
-            holder.textView.requestFocus();
-        }
+        holder.textView.setText("Question. " + text);
     }
 
     @Override

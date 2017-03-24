@@ -19,11 +19,11 @@ public class ConnectionActivity extends AppCompatActivity {
     private Button connectBtn;
     private EditText serverAddressEt;
     private EditText serverPortEt;
-    private EditText usernameEt;
+    private EditText emailEt;
     private Socket socket;
     private String serverAddress;
     private String serverPort;
-    private String username;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,18 +31,18 @@ public class ConnectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_connection);
         serverAddressEt = (EditText) findViewById(R.id.server_address);
         serverPortEt = (EditText) findViewById(R.id.server_port);
-        usernameEt = (EditText) findViewById(R.id.user_name);
+        emailEt = (EditText) findViewById(R.id.email);
         connectBtn = (Button) findViewById(R.id.connect);
         connectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 serverAddress = String.valueOf(serverAddressEt.getText());
                 serverPort = String.valueOf(serverPortEt.getText());
-                username = String.valueOf(usernameEt.getText());
+                email = String.valueOf(emailEt.getText());
                 serverAddress="192.168.0.14";
-                serverPort="8889";
-                username="forceawakened";
-                if (username == null || "".equals(username)) {
+                serverPort="1342";
+                email="bittu";
+                if (email == null || "".equals(email)) {
                     Toast.makeText(connectBtn.getContext(), "Enter Your Username.", Toast.LENGTH_SHORT).show();
                 } else if (serverAddress != null && !"".equals(serverAddress) && serverPort != null && !"".equals(serverPort)) {
                     Connect connection = new Connect();
@@ -61,7 +61,9 @@ public class ConnectionActivity extends AppCompatActivity {
                 System.out.println(params[0] + "  " + params[1]);
                 socket = new Socket(params[0], Integer.parseInt(params[1]));
                 SocketHandler.setSocket(socket);
-                SocketHandler.send("USER:forceawakened");
+                String ip = String.valueOf(socket.getInetAddress()).substring(1);
+                System.out.println(ip);
+                SocketHandler.send("USER:" + email + ":" + ip);
             } catch (Exception e) {
                 e.printStackTrace();
                 result = false;
@@ -75,6 +77,7 @@ public class ConnectionActivity extends AppCompatActivity {
             if (isConnected) {
                 Toast.makeText(connectBtn.getContext(), "Connected To Server.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(connectBtn.getContext(), MainActivity.class);
+                intent.putExtra("EMAIL", email);
                 startActivity(intent);
             } else {
                 Toast.makeText(connectBtn.getContext(), "Connection Failed! Retry.", Toast.LENGTH_SHORT).show();
