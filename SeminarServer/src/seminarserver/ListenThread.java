@@ -25,6 +25,7 @@ public class ListenThread extends Thread  {
     }
     
     public void run(){
+        
         BufferedReader br = null;
         PrintStream p = null;
         String temp;
@@ -50,7 +51,7 @@ public class ListenThread extends Thread  {
                 index=temp.indexOf('#');
                 String IP=temp.substring(0,index);
                 String ques=temp.substring(index+1,temp.length());
-                LiveSeminar.sbutton[LiveSeminar.live.count]=new Struct(ques,email,IP);
+                LiveSeminar.sbutton[LiveSeminar.live.count]=new Struct(ques,email,IP,sock);
                 DefaultListModel model = new DefaultListModel();
                 index=LiveSeminar.live.count;
                 for(int i=0;i<index;i++){

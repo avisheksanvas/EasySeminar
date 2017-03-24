@@ -8,8 +8,23 @@ package seminarserver;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.net.Inet4Address;
+import java.net.Inet6Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.Socket;
+import java.net.SocketException;
+import java.sql.Connection;
+import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
+import java.sql.*;
+import java.util.Enumeration;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,6 +37,10 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
     public static javax.swing.JScrollPane scroll;
     public static javax.swing.JList<String> list;
     public int count=0;
+    public int papacount=0;
+    public static String password;
+    public static String user;
+    public static Socket socket[]=new Socket[256];
     /**
      * Creates new form LiveSeminar
      */
@@ -30,6 +49,31 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         list=this.jList1;
         this.jList1.addMouseListener(this);
         live=this;
+        Runtime run= Runtime.getRuntime();
+        try{
+            user=JOptionPane.showInputDialog("Enter user name");
+            password=JOptionPane.showInputDialog("Enter root password");
+            Process proc = run.exec("echo "+password+" | sudo /etc/init.d/vsftpd restart");
+        }
+        catch(Exception e){
+            System.out.println("Error Occurred");
+        }
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("GTK+".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(LiveSeminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(LiveSeminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(LiveSeminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(LiveSeminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
     }
 
     public void setData(String str){
@@ -51,6 +95,12 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
     private void initComponents() {
 
         Question = new javax.swing.JFrame();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        Open = new javax.swing.JFrame();
+        OpenFile = new javax.swing.JFileChooser();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TextArea = new javax.swing.JTextArea();
@@ -60,15 +110,87 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
 
+        Question.setLocation(new java.awt.Point(500, 250));
+        Question.setMaximumSize(new java.awt.Dimension(550, 95));
+        Question.setMinimumSize(new java.awt.Dimension(550, 95));
+        Question.setPreferredSize(new java.awt.Dimension(550, 95));
+
+        jButton3.setText("Answer To All");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Private Answer");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("Answer later");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Reject Question");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout QuestionLayout = new javax.swing.GroupLayout(Question.getContentPane());
         Question.getContentPane().setLayout(QuestionLayout);
         QuestionLayout.setHorizontalGroup(
             QuestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(QuestionLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(jButton6)
+                .addGap(45, 45, 45)
+                .addComponent(jButton4)
+                .addGap(28, 28, 28)
+                .addComponent(jButton5)
+                .addContainerGap())
         );
         QuestionLayout.setVerticalGroup(
             QuestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(QuestionLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(QuestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3)
+                    .addComponent(jButton5)
+                    .addComponent(jButton4)
+                    .addComponent(jButton6))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+
+        OpenFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpenFileActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout OpenLayout = new javax.swing.GroupLayout(Open.getContentPane());
+        Open.getContentPane().setLayout(OpenLayout);
+        OpenLayout.setHorizontalGroup(
+            OpenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OpenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(OpenFile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        OpenLayout.setVerticalGroup(
+            OpenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OpenLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(OpenFile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,6 +209,11 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         jLabel2.setText("Question Being Asked");
 
         jButton1.setText("Transfer Files To Connected Users");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Close This Connection");
 
@@ -106,11 +233,11 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                .addGap(89, 89, 89)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
+                .addGap(204, 204, 204)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
@@ -127,15 +254,166 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(20, 20, 20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addContainerGap())))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here
+        int index=list.getSelectedIndex();
+        for(int i=index+1;i<count;i++){
+            LiveSeminar.sbutton[i-1]=LiveSeminar.sbutton[i];
+        }
+        count--;
+        DefaultListModel model = new DefaultListModel();
+        for(int i=0;i<count;i++){
+            model.addElement(LiveSeminar.sbutton[i].ques);
+        }
+        LiveSeminar.list.setModel(model);
+        Question.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        int index=list.getSelectedIndex();
+        for(int i=index+1;i<count;i++){
+            LiveSeminar.sbutton[i-1]=LiveSeminar.sbutton[i];
+        }
+        count--;
+        DefaultListModel model = new DefaultListModel();
+        for(int i=0;i<count;i++){
+                   model.addElement(LiveSeminar.sbutton[i].ques);
+        }
+        LiveSeminar.list.setModel(model);
+        Question.setVisible(false);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        Connection conn=MySqlConnect.connection();
+        try{
+            int index=list.getSelectedIndex();
+            PreparedStatement pst = conn.prepareStatement("Select * from unanswered");
+            ResultSet rs = pst.executeQuery();
+            int n = 0 ;
+            while(rs.next())
+            {
+                n++;
+            }
+            String sql="Insert into unanswered values('"+n+"','"+LiveSeminar.sbutton[index].ques+"','"+LiveSeminar.sbutton[index].email+"')";
+            conn.createStatement().execute(sql);
+        for(int i=index+1;i<count;i++){
+            LiveSeminar.sbutton[i-1]=LiveSeminar.sbutton[i];
+            }
+        count--;
+        DefaultListModel model = new DefaultListModel();
+        for(int i=0;i<count;i++){
+                   model.addElement(LiveSeminar.sbutton[i].ques);
+        }
+        LiveSeminar.list.setModel(model);
+        Question.setVisible(false);
+        }
+        catch(Exception e){
+            System.out.println("Error Occurred");
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        int index=list.getSelectedIndex();
+        Socket sock = LiveSeminar.sbutton[index].sock;
+        BufferedReader br = null;
+        PrintStream p = null;
+        String temp;
+        try{
+            //br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+            p = new PrintStream(sock.getOutputStream());
+            String output=JOptionPane.showInputDialog("Type your answer here");
+            if(output==null)
+                return;
+            else{
+                p.println("QUER:2"+output);
+            }
+            for(int i=index+1;i<count;i++){
+            LiveSeminar.sbutton[i-1]=LiveSeminar.sbutton[i];
+        }
+        count--;
+        DefaultListModel model = new DefaultListModel();
+        for(int i=0;i<count;i++){
+                   model.addElement(LiveSeminar.sbutton[i].ques);
+        }
+        LiveSeminar.list.setModel(model);
+        Question.setVisible(false);
+        }
+        catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Open.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private static InetAddress getFirstNonLoopbackAddress(boolean preferIpv4, boolean preferIPv6) throws SocketException {
+    Enumeration en = NetworkInterface.getNetworkInterfaces();
+    while (en.hasMoreElements()) {
+        NetworkInterface i = (NetworkInterface) en.nextElement();
+        for (Enumeration en2 = i.getInetAddresses(); en2.hasMoreElements();) {
+            InetAddress addr = (InetAddress) en2.nextElement();
+            if (!addr.isLoopbackAddress()) {
+                if (addr instanceof Inet4Address) {
+                    if (preferIPv6) {
+                        continue;
+                    }
+                    return addr;
+                }
+                if (addr instanceof Inet6Address) {
+                    if (preferIpv4) {
+                        continue;
+                    }
+                    return addr;
+                }
+            }
+        }
+    }
+    return null;
+}
+
+    
+    private void OpenFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenFileActionPerformed
+        // TODO add your handling code here:
+        File file= OpenFile.getSelectedFile();
+        String Path = file.getAbsolutePath();
+        String base = "/home/"+user;
+        String relative = new File(base).toURI().relativize(new File(Path).toURI()).getPath();
+        try{
+            InetAddress inet = LiveSeminar.getFirstNonLoopbackAddress(true,false);
+            String temp=inet.toString().substring(1);
+            String fttpPath="ftp://"+user+":"+password+"@"+temp+"/"+relative;
+            BufferedReader br = null;
+            PrintStream p = null;
+            for(int i=0;i<papacount;i++){
+                Socket sock = LiveSeminar.sbutton[i].sock;
+                br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+                p = new PrintStream(sock.getOutputStream());
+                p.println(fttpPath);
+            }
+        }
+        catch(Exception e){
+            System.out.println("Error Occurred");
+        }
+        Open.setVisible(false);
+    }//GEN-LAST:event_OpenFileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,7 +426,7 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("GTK+".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -173,10 +451,16 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame Open;
+    private javax.swing.JFileChooser OpenFile;
     private javax.swing.JFrame Question;
     private javax.swing.JTextArea TextArea;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
@@ -187,8 +471,7 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
     @Override
     public void mouseClicked(MouseEvent e) {
         if(e.getClickCount()==2){
-            int index=jList1.getSelectedIndex();
-            
+            Question.setVisible(true);
         }
         //To change body of generated methods, choose Tools | Templates.
     }
