@@ -15,33 +15,71 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/app_logo"
+        android:background="@drawable/background_round"
         android:contentDescription="@string/app_logo_description"/>
     <EditText
         android:id="@+id/server_address"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
+        android:padding="2dp"
+        android:layout_marginTop="64dp"
+        android:textAlignment="center"
+        android:inputType="text"
         android:hint="@string/server_address"
         android:maxLines="1"
-        android:layout_below="@+id/app_logo"/>
+        android:layout_below="@+id/app_logo"
+        android:background="@drawable/background_round2"
+        android:textSize="20sp"
+        android:imeOptions="actionNext">
+    </EditText>
     <EditText
         android:id="@+id/server_port"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
+        android:padding="2dp"
+        android:textAlignment="center"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
         android:hint="@string/server_port"
         android:maxLines="1"
-        android:layout_below="@+id/server_address"/>
+        android:background="@drawable/background_round2"
+        android:textSize="20sp"
+        android:layout_below="@+id/server_address"
+        android:imeOptions="actionNext"/>
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
+        android:padding="2dp"
+        android:textAlignment="center"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="8dp"
         android:hint="@string/email"
         android:maxLines="1"
-        android:layout_below="@+id/server_port"/>
+        android:background="@drawable/background_round2"
+        android:textSize="20sp"
+        android:layout_below="@+id/server_port"
+        android:imeOptions="actionDone"/>
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:padding="2dp"
+        android:textAlignment="center"
+        android:layout_marginTop="8dp"
+        android:inputType="textPassword"
+        android:background="@drawable/background_round2"
+        android:textSize="20sp"
+        android:hint="@string/passwordhint"
+        android:layout_below="@+id/email"
+        android:imeOptions="actionDone"
+        />
     <Button
         android:id="@+id/connect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/connect"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/email"/>
+        android:layout_below="@+id/password"/>
 </RelativeLayout>

@@ -180,6 +180,10 @@
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_list_menu_item_icon.xml"
     },
     {
+        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/fragment_event_details.xml",
+        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/src/main/res/layout/fragment_event_details.xml"
+    },
+    {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/notification_template_part_time.xml"
     },
@@ -222,6 +226,10 @@
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/page_item2.xml",
+        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/src/main/res/layout/page_item2.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",

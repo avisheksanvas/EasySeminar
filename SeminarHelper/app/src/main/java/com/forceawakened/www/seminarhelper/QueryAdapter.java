@@ -1,11 +1,16 @@
 package com.forceawakened.www.seminarhelper;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -24,31 +29,35 @@ public class QueryAdapter extends RecyclerView.Adapter<QueryAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.page_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.page_item2, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String text = arrayList.get(position);
-        holder.textView.setText(text.substring(1));
-        if(text.charAt(0) == '1'){
-            holder.textView.setBackgroundColor(context.getResources().getColor(R.color.white));
-            holder.textView.setTextSize(22);
+        String text = arrayList.get(position).substring(1);
+        Character type = arrayList.get(position).charAt(0);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+        Resources res = context.getResources();
+        int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, res.getDisplayMetrics());
+        if(type == '1'){
+            params.setMarginStart(px);
+            holder.t1.setVisibility(View.GONE);
+            holder.t2.setText(text);
+            holder.t2.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+            holder.t2.setBackgroundColor(context.getResources().getColor(R.color.lightgreen));
         }
-        else if (text.charAt(0) == '2'){
-            holder.textView.setTextColor(context.getResources().getColor(R.color.white));
-            holder.textView.setBackgroundColor(context.getResources().getColor(R.color.darkblue));
-            holder.textView.setTextSize(16);
-            holder.textView.setTypeface(null, Typeface.ITALIC);
+        else if (type == '2'){
+            params.setMarginEnd(px);
+            String text1, text2;
+            int idx = text.lastIndexOf("&^%");
+            text1 = text.substring(0, idx);
+            text2 = text.substring(idx+3, text.length());
+            holder.t1.setText(text1);
+            holder.t2.setText(text2);
         }
-        else{
-            holder.textView.setTextColor(context.getResources().getColor(R.color.white));
-            holder.textView.setBackgroundColor(context.getResources().getColor(R.color.darkblue));
-            holder.textView.setTextSize(22);
-            holder.textView.setTypeface(null, Typeface.BOLD);
-        }
-        holder.textView.setPadding(8, 8, 8, 8);
+        holder.layout.setLayoutParams(params);
     }
 
     @Override
@@ -57,10 +66,13 @@ public class QueryAdapter extends RecyclerView.Adapter<QueryAdapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
+        TextView t1, t2;
+        FrameLayout layout;
         public ViewHolder(View view) {
             super(view);
-            textView = (TextView) view.findViewById(R.id.text_view);
+            layout = (FrameLayout) view.findViewById(R.id.frame_layout);
+            t1 = (TextView) view.findViewById(R.id.textview1);
+            t2 = (TextView) view.findViewById(R.id.textview2);
         }
     }
 }

@@ -7,31 +7,25 @@
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="96dp"
+        android:padding="16dp"
+        android:textAlignment="center"
+        android:background="@drawable/background_round2"
+        android:textSize="20sp"
         android:hint="@string/message_here" />
     <Button
         android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/send"
+        android:layout_marginTop="8dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/edit_text"/>
-    <TextView
-        android:id="@+id/older_messages"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/older_messages"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/send"/>
-
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
-        android:layout_below="@+id/older_messages">
+        android:layout_marginTop="32dp"
+        android:layout_height="384dp"
+        android:layout_below="@+id/send">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"

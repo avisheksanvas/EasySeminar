@@ -37,7 +37,7 @@ public class FileListFragment extends Fragment implements FileListAdapter.Callba
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new FileListAdapter(this, arrayList);
+        adapter = new FileListAdapter(this, getActivity(), arrayList);
         recyclerView.setAdapter(adapter);
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

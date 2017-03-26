@@ -3,8 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="green">#00FF00</color>
+    <color name="lightgreen">#33FF6B</color>
     <color name="cyan">#00FFFF</color>
     <color name="white">#FFFFFF</color>
-    <color name="darkblue">	#00008B</color>
+    <color name="black">#000000</color>
+    <color name="lightblue">#33FFFF</color>
+    <color name="blue">#33ACFF</color>
+    <color name="darkblue">#3349FF</color>
+    <color name="lightgrey">#A9A9A9</color>
+    <color name="darkgrey">#778899</color>
+    <color name="verylightblue">#DEE7E5</color>
 </resources>

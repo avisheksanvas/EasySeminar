@@ -1,6 +1,7 @@
 package com.forceawakened.www.seminarhelper;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +33,11 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         String text = arrayList.get(position);
-        holder.textView.setText("Question. " + text);
+        holder.textView.setText(text);
+        holder.textView.setTextColor(context.getResources().getColor(R.color.black));
+        holder.textView.setBackgroundColor(context.getResources().getColor(R.color.white));
+        holder.textView.setTextSize(22);
+        holder.textView.setTypeface(null, Typeface.ITALIC);
     }
 
     @Override

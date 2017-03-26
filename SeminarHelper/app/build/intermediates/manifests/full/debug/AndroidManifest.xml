@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="com.forceawakened.www.seminarhelper.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -32,7 +33,8 @@
             android:name="com.forceawakened.www.seminarhelper.MainActivity"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
 
         <service android:name="com.forceawakened.www.seminarhelper.SocketService" />
 

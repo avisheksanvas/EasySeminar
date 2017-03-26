@@ -28,15 +28,21 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar mToolbar;
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private Integer where;
-    private Callback callback;
     private boolean mIsBound;
     private Integer countBackPress;
     private String email;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,12 +102,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //main code
-        HomePageFragment homePageFragment = new HomePageFragment();
-        Fragment fragment = homePageFragment;
-        callback = homePageFragment;
+        getSupportActionBar().setTitle("Event Details");
+        Fragment eventdetailsfragment = new EventDetailsFragment();
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.load_content, fragment)
+                .replace(R.id.load_content, eventdetailsfragment)
                 .commit();
         where = 1;
         Intent intent = new Intent(MainActivity.this, SocketService.class);
@@ -176,13 +180,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.homepage) {
-            mToolbar.setTitle("Homepage");
+        if (id == R.id.event_details){
+            mToolbar.setTitle("Event Details");
+            Fragment eventdetailsfragment = new EventDetailsFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.load_content, eventdetailsfragment)
+                    .commit();
+            where = 1;
+        }
+        else if (id == R.id.read_speech) {
+            mToolbar.setTitle("Read Speech");
             Fragment homepagefragment = new HomePageFragment();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.load_content, homepagefragment)
                     .commit();
-            where = 1;
+            where = 2;
         } else if (id == R.id.queries) {
             mToolbar.setTitle("Queries");
             Fragment queryfragment = new QueryFragment();
@@ -192,14 +204,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.load_content, queryfragment)
                     .commit();
-            where = 2;
+            where = 3;
         }else if (id == R.id.announce) {
             mToolbar.setTitle("Announcements");
             Fragment announcefragment = new AnnounceFragment();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.load_content, announcefragment)
                     .commit();
-            where = 3;
+            where = 4;
         }
         else if (id == R.id.files) {
             mToolbar.setTitle("Get Files");
@@ -207,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.load_content, listfragment)
                     .commit();
-            where = 4;
+            where = 5;
         }
         else if (id == R.id.about){
             mToolbar.setTitle("About");
@@ -215,13 +227,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.load_content, aboutfragment)
                     .commit();
-            where = 5;
+            where = 6;
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    public interface Callback{
-        void sendMessage(String s);
-    }
 }

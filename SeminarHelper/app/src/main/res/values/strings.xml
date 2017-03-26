@@ -5,7 +5,7 @@
     <string name="app_logo_description">App Logo Here</string>
     <string name="connect">Connect</string>
     <string name="user_name">Your Username</string>
-    <string name="homepage">Homepage</string>
+    <string name="homepage">Read Speech</string>
     <string name="queries">Queries</string>
     <string name="files">Files</string>
     <string name="title_activity_main">Homepage</string>
@@ -19,4 +19,16 @@
     <string name="about">About</string>
     <string name="email">Your Email</string>
     <string name="announce">Announcements</string>
+    <string name="speak">speak</string>
+    <string name="warning">Say Exit To Stop</string>
+    <string name="passwordhint">Password (for root login)</string>
+    <string name="read_speech">Read Speech</string>
+    <string name="event_details">Event Details</string>
+
+    <string name="app_description">Developed at\nHack In The North 2017\n by</string>
+    <string name="team_members">Radical Professionals</string>
+    <string name="prabhat">Prabhat Singh</string>
+    <string name="avishek">Avishek Sanvas</string>
+    <string name="aditya">Aditya Chaudhary</string>
+    <string name="abhey">Abhey Rana</string>
 </resources>
