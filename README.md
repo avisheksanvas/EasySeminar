@@ -16,9 +16,9 @@ sessions making it more easier for them to understand concepts.
 * This android app lets the audience to ask questions from the speaker helping them to get better understanding of concepts.
 * This android app also notifies about various announcements being done by the speaker
 * With the help of this android app user can also download various resources being shared by the speaker.
-![Screenshots1 Android Side](https://github.com/Abhey/EasySeminar/nav_bar.png)
-![Screenshots2 Android Side](https://github.com/Abhey/EasySeminar/blob/master/Screenshots/query_fragment.png)
-![Screenshots2 Android Side](https://github.com/Abhey/EasySeminar/blob/master/Screenshots/login_activity.png)
+![Screenshots1 Android Side](https://github.com/forceawakened/EasySeminar/nav_bar.png)
+![Screenshots2 Android Side](https://github.com/forceawakened/EasySeminar/blob/master/Screenshots/query_fragment.png)
+![Screenshots2 Android Side](https://github.com/forceawakened/EasySeminar/blob/master/Screenshots/login_activity.png)
 
 # SEMINAR SERVER PC APPLICATION
 * This application helps the speaker to send files to audience which might help them in future.
@@ -38,5 +38,5 @@ sessions making it more easier for them to understand concepts.
 * More advanced note making tools that will make it easier for the speaker to create and manage notes.
 
 As said by our team member Prabhat Singh:
->It is app for common people
->Which is used not so commonly
+>It is an app for common people
+>but not used commonly
