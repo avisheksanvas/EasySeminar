@@ -43,6 +43,9 @@ As said by our team member Prabhat Singh:
 
 # REPORT BUGS AT
 Abhey Rana - abheyranacool123.ar@gmail.com
+
 Prabhat Singh - prabhatsingh6897@gmail.com
+
 Aditya Chaudhary - adityachd123@gmail.com
+
 Avishek Santhaliya - avisheksanvas@gmail.com
