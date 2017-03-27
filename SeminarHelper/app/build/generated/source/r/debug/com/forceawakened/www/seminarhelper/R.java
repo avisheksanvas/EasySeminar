@@ -2804,7 +2804,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int abhey=0x7f0d0093;
-        public static final int about=0x7f0d00bc;
+        public static final int about=0x7f0d00be;
         public static final int action0=0x7f0d009e;
         public static final int action_bar=0x7f0d0065;
         public static final int action_bar_activity_content=0x7f0d0000;
@@ -2832,7 +2832,7 @@ containing a value of this type.
         public static final int alertTitle=0x7f0d0059;
         public static final int all=0x7f0d0037;
         public static final int always=0x7f0d003b;
-        public static final int announce=0x7f0d00ba;
+        public static final int announce=0x7f0d00bc;
         public static final int app_logo=0x7f0d0075;
         public static final int auto=0x7f0d0026;
         public static final int avishek=0x7f0d0095;
@@ -2870,11 +2870,11 @@ containing a value of this type.
         public static final int end_padder=0x7f0d00b0;
         public static final int enterAlways=0x7f0d001a;
         public static final int enterAlwaysCollapsed=0x7f0d001b;
-        public static final int event_details=0x7f0d00b7;
+        public static final int event_details=0x7f0d00b9;
         public static final int exitUntilCollapsed=0x7f0d001c;
         public static final int expand_activities_button=0x7f0d0046;
         public static final int expanded_menu=0x7f0d005b;
-        public static final int files=0x7f0d00bb;
+        public static final int files=0x7f0d00bd;
         public static final int fill=0x7f0d0035;
         public static final int fill_horizontal=0x7f0d0036;
         public static final int fill_vertical=0x7f0d002c;
@@ -2888,6 +2888,8 @@ containing a value of this type.
         public static final int image=0x7f0d0047;
         public static final int info=0x7f0d00a8;
         public static final int item_touch_helper_previous_elevation=0x7f0d0006;
+        public static final int lang_english=0x7f0d00b7;
+        public static final int lang_hindi=0x7f0d00b8;
         public static final int largeLabel=0x7f0d0084;
         public static final int left=0x7f0d002d;
         public static final int line1=0x7f0d0091;
@@ -2916,9 +2918,9 @@ containing a value of this type.
         public static final int prabhat=0x7f0d0096;
         public static final int progress_circular=0x7f0d0007;
         public static final int progress_horizontal=0x7f0d0008;
-        public static final int queries=0x7f0d00b9;
+        public static final int queries=0x7f0d00bb;
         public static final int radio=0x7f0d005e;
-        public static final int read_speech=0x7f0d00b8;
+        public static final int read_speech=0x7f0d00ba;
         public static final int recycler_view=0x7f0d0098;
         public static final int relative_layout=0x7f0d00b3;
         public static final int right=0x7f0d002e;
@@ -3080,7 +3082,8 @@ containing a value of this type.
         public static final int test=0x7f040048;
     }
     public static final class menu {
-        public static final int navbar=0x7f0e0000;
+        public static final int language=0x7f0e0000;
+        public static final int navbar=0x7f0e0001;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -3130,33 +3133,36 @@ containing a value of this type.
         public static final int character_counter_pattern=0x7f07002b;
         public static final int connect=0x7f07002c;
         public static final int email=0x7f07002d;
-        public static final int event_details=0x7f07002e;
-        public static final int files=0x7f07002f;
-        public static final int homepage=0x7f070030;
-        public static final int message_here=0x7f070031;
-        public static final int navigation_drawer_close=0x7f070032;
-        public static final int navigation_drawer_open=0x7f070033;
-        public static final int nothing_to_display=0x7f070034;
-        public static final int older_messages=0x7f070035;
-        public static final int password_toggle_content_description=0x7f070036;
-        public static final int passwordhint=0x7f070037;
-        public static final int path_password_eye=0x7f070038;
-        public static final int path_password_eye_mask_strike_through=0x7f070039;
-        public static final int path_password_eye_mask_visible=0x7f07003a;
-        public static final int path_password_strike_through=0x7f07003b;
-        public static final int prabhat=0x7f07003c;
-        public static final int queries=0x7f07003d;
-        public static final int read_speech=0x7f07003e;
+        public static final int english=0x7f07002e;
+        public static final int event_details=0x7f07002f;
+        public static final int files=0x7f070030;
+        public static final int french=0x7f070031;
+        public static final int hindi=0x7f070032;
+        public static final int homepage=0x7f070033;
+        public static final int message_here=0x7f070034;
+        public static final int navigation_drawer_close=0x7f070035;
+        public static final int navigation_drawer_open=0x7f070036;
+        public static final int nothing_to_display=0x7f070037;
+        public static final int older_messages=0x7f070038;
+        public static final int password_toggle_content_description=0x7f070039;
+        public static final int passwordhint=0x7f07003a;
+        public static final int path_password_eye=0x7f07003b;
+        public static final int path_password_eye_mask_strike_through=0x7f07003c;
+        public static final int path_password_eye_mask_visible=0x7f07003d;
+        public static final int path_password_strike_through=0x7f07003e;
+        public static final int prabhat=0x7f07003f;
+        public static final int queries=0x7f070040;
+        public static final int read_speech=0x7f070041;
         public static final int search_menu_title=0x7f070013;
-        public static final int send=0x7f07003f;
-        public static final int server_address=0x7f070040;
-        public static final int server_port=0x7f070041;
-        public static final int speak=0x7f070042;
+        public static final int send=0x7f070042;
+        public static final int server_address=0x7f070043;
+        public static final int server_port=0x7f070044;
+        public static final int speak=0x7f070045;
         public static final int status_bar_notification_info_overflow=0x7f070014;
-        public static final int team_members=0x7f070043;
-        public static final int title_activity_main=0x7f070044;
-        public static final int user_name=0x7f070045;
-        public static final int warning=0x7f070046;
+        public static final int team_members=0x7f070046;
+        public static final int title_activity_main=0x7f070047;
+        public static final int user_name=0x7f070048;
+        public static final int warning=0x7f070049;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0900a3;

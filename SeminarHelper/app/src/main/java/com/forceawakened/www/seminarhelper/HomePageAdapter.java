@@ -29,7 +29,6 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.ViewHo
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.page_item, parent, false);
         return new ViewHolder(view);
     }
-
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         String text = arrayList.get(position);

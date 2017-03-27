@@ -1,18 +1,66 @@
 [
     {
+        "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_template_icon_group.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_action.xml"
     },
     {
+        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_action.xml"
+    },
+    {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_action_tombstone.xml"
     },
     {
+        "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_action_tombstone.xml"
     }
 ]

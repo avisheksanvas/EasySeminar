@@ -2,157 +2,265 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_49006e05230a8ddac6060e9be8aa7defccae06d2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.0_5d2ad62aac217efbfe19d94ebc98404a6a690f9d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_69a90d52ca2c55ca27f5b11389563c8bd82c5bba/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_33b00e501ecacd31b6c4d9000d8c6e655bc650fd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7f2420506110902f033406b25697cf97ee8c38b2">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-25.1.0_5dd3d4638b708c4e261c10268742c0d88fcb6511/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_7b42622de8a0ab89c1baf0108ab23561b381b834/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_435ac948fad2958bd94f44b7a567d3d482a1a736/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_47c3034c4a030e0fc44e652cdff9a5b401b65afc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a21356d41f40acd52dd83dce472f42e57ff7bb97">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f1e4e27308d241d65081187a2f7ff25204207b34/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="04abc274a1ddc04d9dfde527be5ceff667d72cb3">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_20c55ac6af11c74d69aec6050bf0f06885314f1a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_473fe84b5441bfc539b5f2677573c5720dba291a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_14bcdbdbee72e3312bb6d5496e9d0569991785d1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/uk.co.chrisjenx/calligraphy/2.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ebcb0bcf52fab7c586f39717f7cb8de91748b1b1">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/uk.co.chrisjenx-calligraphy-2.2.0_ad77c52f8f13728648905e966736165d07d798e6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_d31bc954840583c4531f1b177e4b21fed0791d63/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_ea75b1acf082c3212a5300f83e5bc943edde558d/classes.dex" />
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.1.0_0efc3808f2a482e12fe22d96f0f65d9020829b1a.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/forceawakened/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_f0ede94dd5aaa4cc4365e9845d39126cbfa368e0/classes.dex" />
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.1.0_15fbe852b07b6ab744e19ff07f5a695bb34f9627.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-design-25.1.0_47a8a655a1be1ce3b86c735b459332e1d51268d1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.1.0_b7d7ee5e6457e1a25c09722162ba418c0c68edf4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.1.0_204746486b84a281a1f05a02e092bb3df31077ae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/uk.co.chrisjenx/calligraphy/2.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ebcb0bcf52fab7c586f39717f7cb8de91748b1b1">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/uk.co.chrisjenx-calligraphy-2.2.0_2abd746e86bd0597ef7f8dc9e203b286e7f90525.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-design-25.1.0_db0934bfccb1a2840ec40e661b75ab9d4735ee42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7f2420506110902f033406b25697cf97ee8c38b2">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-25.1.0_34a0fba005f3670d17f355006c28a545c0b9246f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.1.0_642dfe4406c6ba4233c3df8d305ddc1d49a5c94a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
-        <dex dex="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_9aab186abc797ce7901bcbbaecaa4274a72b9053/classes.dex" />
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.1.0_1a78a29e9c64e658a16805913cc0b36e76d440f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.1.0_4e182051b69dd1c3fb708e206b0cb3780496cbb4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.1.0_0d73e8db87ab2c5e22c3fafbffa014009c0df245.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.1.0_59c68a7a91ae521881f21dd0aba04b83d9f84489.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.1.0_2d050f9edfaf3ef999512a857fc7fc2751eaa639.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.1.0_efe9a16f535e4be7573d594b694616d1973c4cf3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.1.0_dcae48ce7d151b00c55e39b3fba6954a290a7ee3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7f2420506110902f033406b25697cf97ee8c38b2">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-25.1.0_d56c2296d9de5f1c164dfdba4767a31d1cd59c80.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.1.0_8e99de93936f4e43be74fe6a03e6b35b18c3b5c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-transition-25.1.0_cc46f032aeab59b1aa9b91b727c43aab285aa646.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/support-annotations-25.1.0_51784f1431feadff2dcc3a4b8cec2c1d3ab9ed58.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.1.0_ebfba8b7265cff74dd7006228ed8a353a26526d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.1.0_59db54ada957694f43df8d939bc009d2e7bca107.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.1.0_25646f974eddf00b142ed582d1aa66ff4317e7c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.1.0_b6f63add3c34eff1d6b69a8a664f91d53c11a16e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/uk.co.chrisjenx/calligraphy/2.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ebcb0bcf52fab7c586f39717f7cb8de91748b1b1">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/uk.co.chrisjenx-calligraphy-2.2.0_aca8828f802178440184197c296901b09a2bac2b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.1.0_c0f8efe1e9dd1c9ba26ddb1da967b26b1a5dddee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.1.0_d352970aa8d8e824f9bf755ace2cdb0d50d51159.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.1.0_cc976c214f71df85927d711c849cf23be42cad57.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/pre-dexed/debug/com.android.support-transition-25.1.0_ccfee35e05e0cbd0204ac9dea112910e73494c68.jar" />
     </item>
 
 </items>

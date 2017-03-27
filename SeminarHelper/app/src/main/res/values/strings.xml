@@ -31,4 +31,7 @@
     <string name="avishek">Avishek Sanvas</string>
     <string name="aditya">Aditya Chaudhary</string>
     <string name="abhey">Abhey Rana</string>
+    <string name="english">English</string>
+    <string name="hindi">Hindi</string>
+    <string name="french">French</string>
 </resources>

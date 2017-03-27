@@ -1,5 +1,17 @@
 [
     {
+        "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     }

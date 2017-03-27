@@ -1,6 +1,26 @@
 [
     {
+        "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/menu/navbar.xml",
+        "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/src/main/res/menu/navbar.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/menu/language.xml",
+        "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/src/main/res/menu/language.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/menu/navbar.xml",
+        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/src/main/res/menu/navbar.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/menu/language.xml",
+        "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/src/main/res/menu/language.xml"
+    },
+    {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/menu/navbar.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/src/main/res/menu/navbar.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/menu/navbar.xml",
+        "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/src/main/res/menu/navbar.xml"
     }
 ]
