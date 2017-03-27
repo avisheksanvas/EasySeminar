@@ -3,16 +3,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.forceawakened.www.seminarhelper.AboutFragment">
-
+    <View
+        android:id="@+id/line2"
+        android:background="@color/lightblue"
+        android:layout_marginTop="16dp"
+        android:paddingStart="64dp"
+        android:paddingEnd="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
     <TextView
         android:id="@+id/description"
         android:padding="4dp"
-        android:textStyle="italic"
-        android:text="Description Of App"
+        android:layout_marginTop="32dp"
+        fontPath="fonts/Insomnia.ttf"
+        android:text="@string/app_description"
         android:textSize="20sp"
+        android:textColor="@color/lightblue"
+        android:textAlignment="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_centerHorizontal="true" />
+    <View
+        android:id="@+id/line1"
+        android:background="@color/lightblue"
+        android:layout_marginTop="32dp"
+        android:paddingStart="64dp"
+        android:paddingEnd="64dp"
+        android:layout_below="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+    <TextView
+        android:id="@+id/team_members"
+        android:padding="4dp"
+        android:layout_marginTop="32dp"
+        fontPath="fonts/android_7.ttf"
+        android:text="@string/team_members"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/abhey"
+        android:padding="4dp"
+        fontPath="fonts/IDroid.otf"
+        android:text="@string/abhey"
+        android:textSize="20sp"
+        android:textColor="@color/verylightblue"
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/team_members"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/aditya"
+        android:padding="4dp"
+        fontPath="fonts/IDroid.otf"
+        android:text="@string/aditya"
+        android:textSize="20sp"
+        android:textColor="@color/verylightblue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/abhey"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/avishek"
+        android:padding="4dp"
+        android:textStyle="italic"
+        fontPath="fonts/IDroid.otf"
+        android:text="@string/avishek"
+        android:textSize="20sp"
+        android:textColor="@color/verylightblue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aditya"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/prabhat"
+        android:padding="4dp"
+        fontPath="fonts/IDroid.otf"
+        android:text="@string/prabhat"
+        android:textSize="20sp"
+        android:textColor="@color/verylightblue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/avishek"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

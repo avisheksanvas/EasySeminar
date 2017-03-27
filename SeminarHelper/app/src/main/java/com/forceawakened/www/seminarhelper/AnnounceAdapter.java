@@ -32,9 +32,6 @@ public class AnnounceAdapter extends RecyclerView.Adapter<AnnounceAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         String text = arrayList.get(position);
         holder.textView.setText(text);
-        holder.textView.setBackgroundColor(context.getResources().getColor(R.color.white));
-        holder.textView.setTextSize(22);
-        holder.textView.setPadding(8, 8, 8, 8);
     }
 
     @Override

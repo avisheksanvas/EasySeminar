@@ -16,10 +16,12 @@ import java.util.ArrayList;
 
 public class FileListAdapter extends RecyclerView.Adapter<FileListAdapter.ViewHolder> {
     Callback callback;
+    Context context;
     ArrayList<String> arrayList;
 
-    public FileListAdapter(Callback callback, ArrayList<String> list) {
+    public FileListAdapter(Callback callback, Context context, ArrayList<String> list) {
         this.callback = callback;
+        this.context = context;
         arrayList = list;
     }
 
@@ -33,8 +35,11 @@ public class FileListAdapter extends RecyclerView.Adapter<FileListAdapter.ViewHo
     public void onBindViewHolder(FileListAdapter.ViewHolder holder, int position) {
         String text = arrayList.get(position);
         int idx = text.lastIndexOf("/") + 1;
-        System.out.println("last index of = " + idx);
         holder.textView.setText(text.substring(idx));
+        holder.textView.setTextColor(context.getResources().getColor(R.color.white));
+        holder.textView.setBackgroundColor(context.getResources().getColor(R.color.darkblue));
+        holder.textView.setTextSize(22);
+        holder.textView.setPadding(8, 8, 8, 8);
     }
 
     @Override
@@ -47,7 +52,6 @@ public class FileListAdapter extends RecyclerView.Adapter<FileListAdapter.ViewHo
         public ViewHolder(View view) {
             super(view);
             textView = (TextView) view.findViewById(R.id.text_view);
-            textView.setTextSize(20);
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -54,6 +54,7 @@ public class QueryFragment extends Fragment {
                 if(msg == null || "".equals(msg) || "\n".equals(msg)){
                     return;
                 }
+                msg = msg.replace('\n', ' ');
                 SocketHandler.send("SEND:" + email + "::#" + msg);
                 msgText.setText("");
                 Toast.makeText(sendBtn.getContext(), "Message Sent.", Toast.LENGTH_SHORT).show();

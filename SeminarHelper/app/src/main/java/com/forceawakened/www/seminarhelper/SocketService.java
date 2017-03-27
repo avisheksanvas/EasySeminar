@@ -31,7 +31,7 @@ public class SocketService extends Service {
     private String filename3 = "filelist.txt";
     private String filename4 = "announce.txt";
     private Socket socket;
-    public Integer countMsg = 0;
+    public Integer countMsg = 0, countAnn = 0;
     OutputStream out1, out2, out3, out4;
 
     @Override
@@ -62,7 +62,7 @@ public class SocketService extends Service {
     public void sendQuery(String msg){
         try {
             out2.write(msg.getBytes());
-            displayNotification();
+            displayNotification(2);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,30 +79,59 @@ public class SocketService extends Service {
     public void sendAnnounce(String msg){
         try {
             out4.write(msg.getBytes());
+            displayNotification(4);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void displayNotification(){
-        String delete_notif = "DELETE_NOTIFICATION";
-        BroadcastReceiver receiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                countMsg = 0;
-                unregisterReceiver(this);
+    public void displayNotification(int flag){
+        if(flag == 2) {
+            if(countMsg <= 0){
+                return;
             }
-        };
-        Intent intent = new Intent(delete_notif);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-        registerReceiver(receiver, new IntentFilter(delete_notif));
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle("Seminar Helper")
-                        .setContentText("You have " + countMsg + " unread messages.")
-                        .setDeleteIntent(pendingIntent);
-        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        manager.notify(0, builder.build());
+            BroadcastReceiver receiver = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    countMsg = 0;
+                    unregisterReceiver(this);
+                }
+            };
+            String delete_msg = "DELETE_MESSAGE";
+            Intent intent = new Intent(delete_msg);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+            registerReceiver(receiver, new IntentFilter(delete_msg));
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setContentTitle("Seminar Helper")
+                    .setContentText("You have " + countMsg + " unread messages.")
+                    .setDeleteIntent(pendingIntent);
+            NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            manager.notify(0, builder.build());
+        }
+        else{
+            if(countAnn <= 0){
+                return;
+            }
+            BroadcastReceiver receiver = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    countAnn = 0;
+                    unregisterReceiver(this);
+                }
+            };
+            String delete_notif = "DELETE_NOTIFICATION";
+            Intent intent = new Intent(delete_notif);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+            registerReceiver(receiver, new IntentFilter(delete_notif));
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setContentTitle("Seminar Helper")
+                    .setContentText("You have missed " + countAnn + " notifications.")
+                    .setDeleteIntent(pendingIntent);
+            NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            manager.notify(1, builder.build());
+        }
     }
 
     @Override
@@ -128,25 +157,26 @@ public class SocketService extends Service {
                     out4 = openFileOutput(filename4, Context.MODE_APPEND);
                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     String text, key, value;
-                    while((text = in.readLine()) != null) {
-                        key = text.substring(0, 4);
-                        value = text.substring(5);
-                        value += '\n';
-                        if("EXIT".equals(key)) {
-                            break;
-                        }
-                        else if("TEXT".equals(key)){
-                            sendMessage(value);
-                        }
-                        else if("QUER".equals(key)){
-                            sendQuery(value);
-                            ++countMsg;
-                        }
-                        else if("FILE".equals(key)){
-                            sendFile(value);
-                        }
-                        else if("ANNO".equals(key)){
-                            sendAnnounce(value);
+                    while(true) {
+                        text = in.readLine();
+                        System.out.println(text);
+                        if(text.length() > 5) {
+                            key = text.substring(0, 4);
+                            value = text.substring(5);
+                            value += "\n";
+                            if ("EXIT".equals(key)) {
+                                break;
+                            } else if ("TEXT".equals(key)) {
+                                sendMessage(value);
+                            } else if ("QUER".equals(key)) {
+                                sendQuery(value);
+                                ++countMsg;
+                            } else if ("FILE".equals(key)) {
+                                sendFile(value);
+                            } else if ("ANNO".equals(key)) {
+                                sendAnnounce(value);
+                                ++countAnn;
+                            }
                         }
                     }
                     out1.close();
@@ -155,7 +185,7 @@ public class SocketService extends Service {
                     out4.close();
                 }
                 catch (Exception e) {
-                    System.out.println("Service: while reading/writing socket.");
+                    System.out.println("Service: error while reading/writing socket.");
                     e.printStackTrace();
                 }
             }

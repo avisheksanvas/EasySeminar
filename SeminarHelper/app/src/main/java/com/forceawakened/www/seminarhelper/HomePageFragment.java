@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class HomePageFragment extends Fragment implements MainActivity.Callback {
+public class HomePageFragment extends Fragment{
     private ArrayList<String> arrayList;
     private HomePageAdapter adapter;
     private String filename = "home.txt";
@@ -46,13 +46,6 @@ public class HomePageFragment extends Fragment implements MainActivity.Callback 
         });
         (new LoadData()).execute();
         return view;
-    }
-
-
-    @Override
-    public void sendMessage(String s) {
-        arrayList.add(s);
-        adapter.notifyItemInserted(arrayList.size()-1);
     }
 
     public class LoadData extends AsyncTask<Void, Void, Boolean> {

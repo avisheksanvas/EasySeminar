@@ -1,4 +1,4 @@
-#Sat Mar 25 01:31:37 IST 2017
+#Sun Mar 26 16:35:15 IST 2017
 base.0=/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_20c55ac6af11c74d69aec6050bf0f06885314f1a
 renamed.1=classes.dex
 renamed.0=classes2.dex
