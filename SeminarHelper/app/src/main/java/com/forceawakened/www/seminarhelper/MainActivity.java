@@ -33,6 +33,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar mToolbar;
     private ActionBarDrawerToggle mDrawerToggle;
+    private NavigationView mDrawer;
     private DrawerLayout mDrawerLayout;
     private Integer where;
     private boolean mIsBound;
@@ -47,9 +48,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //set ui
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        NavigationView mDrawer = (NavigationView) findViewById(R.id.navbar);
+        mDrawer = (NavigationView) findViewById(R.id.navbar);
         mDrawer.setNavigationItemSelectedListener(this);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -58,9 +58,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.addDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();
+        super.onCreate(savedInstanceState);
         //init
         email = getIntent().getStringExtra("EMAIL");
         countBackPress = 0;
+        delete_cache();
+        mDrawer.setCheckedItem(R.id.event_details);
+        getSupportActionBar().setTitle("Event Details");
+        Fragment eventdetailsfragment = new EventDetailsFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.load_content, eventdetailsfragment)
+                .commit();
+        where = 1;
+        Intent intent = new Intent(MainActivity.this, SocketService.class);
+        startService(intent);
+        doBindService();
+    }
+
+    private void delete_cache() {
         File outputDir = getCacheDir();
         try {
             File file = getFileStreamPath("home.txt");
@@ -102,15 +117,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } catch (IOException e) {
             e.printStackTrace();
         }
-        getSupportActionBar().setTitle("Event Details");
-        Fragment eventdetailsfragment = new EventDetailsFragment();
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.load_content, eventdetailsfragment)
-                .commit();
-        where = 1;
-        Intent intent = new Intent(MainActivity.this, SocketService.class);
-        startService(intent);
-        doBindService();
     }
 
     SocketService mBoundService ;
@@ -180,6 +186,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
+
         if (id == R.id.event_details){
             mToolbar.setTitle("Event Details");
             Fragment eventdetailsfragment = new EventDetailsFragment();

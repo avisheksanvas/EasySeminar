@@ -4,6 +4,10 @@
         "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },

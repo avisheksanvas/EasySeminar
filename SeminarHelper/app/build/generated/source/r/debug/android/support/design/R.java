@@ -443,8 +443,8 @@ public final class R {
 		public static final int secondary_text_disabled_material_light = 0x7f0c0050;
 		public static final int switch_thumb_disabled_material_dark = 0x7f0c0051;
 		public static final int switch_thumb_disabled_material_light = 0x7f0c0052;
-		public static final int switch_thumb_material_dark = 0x7f0c006e;
-		public static final int switch_thumb_material_light = 0x7f0c006f;
+		public static final int switch_thumb_material_dark = 0x7f0c006f;
+		public static final int switch_thumb_material_light = 0x7f0c0070;
 		public static final int switch_thumb_normal_material_dark = 0x7f0c0053;
 		public static final int switch_thumb_normal_material_light = 0x7f0c0054;
 	}
@@ -960,14 +960,14 @@ public final class R {
 		public static final int abc_shareactionprovider_share_with = 0x7f070010;
 		public static final int abc_shareactionprovider_share_with_application = 0x7f070011;
 		public static final int abc_toolbar_collapse_description = 0x7f070012;
-		public static final int appbar_scrolling_view_behavior = 0x7f070028;
-		public static final int bottom_sheet_behavior = 0x7f07002a;
-		public static final int character_counter_pattern = 0x7f07002b;
-		public static final int password_toggle_content_description = 0x7f070039;
-		public static final int path_password_eye = 0x7f07003b;
-		public static final int path_password_eye_mask_strike_through = 0x7f07003c;
-		public static final int path_password_eye_mask_visible = 0x7f07003d;
-		public static final int path_password_strike_through = 0x7f07003e;
+		public static final int appbar_scrolling_view_behavior = 0x7f07002a;
+		public static final int bottom_sheet_behavior = 0x7f07002d;
+		public static final int character_counter_pattern = 0x7f07002e;
+		public static final int password_toggle_content_description = 0x7f07003c;
+		public static final int path_password_eye = 0x7f07003e;
+		public static final int path_password_eye_mask_strike_through = 0x7f07003f;
+		public static final int path_password_eye_mask_visible = 0x7f070040;
+		public static final int path_password_strike_through = 0x7f070041;
 		public static final int search_menu_title = 0x7f070013;
 		public static final int status_bar_notification_info_overflow = 0x7f070014;
 	}

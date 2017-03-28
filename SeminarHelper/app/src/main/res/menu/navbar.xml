@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/event_details"
-        android:icon="@drawable/navbar_bullet"
-        android:title="@string/event_details"/>
-    <item android:id="@+id/read_speech"
-        android:icon="@drawable/navbar_bullet"
-        android:title="@string/read_speech"/>
-    <item android:id="@+id/queries"
-        android:icon="@drawable/navbar_bullet"
-        android:title="@string/queries"/>
-    <item android:id="@+id/announce"
-        android:icon="@drawable/navbar_bullet"
-        android:title="@string/announce"/>
-    <item android:id="@+id/files"
-        android:icon="@drawable/navbar_bullet"
-        android:title="@string/files"/>
-    <item android:id="@+id/about"
-        android:icon="@drawable/navbar_bullet"
-        android:title="@string/about"/>
+    <group android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item android:id="@+id/event_details"
+            android:icon="@drawable/navbar_bullet"
+            android:title="@string/event_details"/>
+        <item android:id="@+id/read_speech"
+            android:icon="@drawable/navbar_bullet"
+            android:title="@string/read_speech"/>
+        <item android:id="@+id/queries"
+            android:icon="@drawable/navbar_bullet"
+            android:title="@string/queries"/>
+        <item android:id="@+id/announce"
+            android:icon="@drawable/navbar_bullet"
+            android:title="@string/announce"/>
+        <item android:id="@+id/files"
+            android:icon="@drawable/navbar_bullet"
+            android:title="@string/files"/>
+        <item android:id="@+id/about"
+            android:icon="@drawable/navbar_bullet"
+            android:title="@string/about"/>
+    </group>
 </menu>

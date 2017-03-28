@@ -27,6 +27,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
@@ -59,7 +61,6 @@ public class HomePageFragment extends Fragment{
         });
         (new LoadData()).execute();
         setHasOptionsMenu(true);
-
         return view;
     }
 
@@ -77,11 +78,10 @@ public class HomePageFragment extends Fragment{
                     String line;
                     arrayList.clear();
                     while ((line = br.readLine()) != null) {
-                        if( to_translate ) {
+                        if(to_translate) {
                             line = translate(line);
                         }
                         arrayList.add(line);
-
                     }
                 }
             } catch (FileNotFoundException e) {
@@ -109,18 +109,28 @@ public class HomePageFragment extends Fragment{
             }
         }
     }
+
     public String translate(String text) {
         String ans = null;
         try {
             String query = URLEncoder.encode(text, "UTF-8");
             String langpair = URLEncoder.encode("en|hi", "UTF-8");
-            String url = "http://mymemory.translated.net/api/get?q="+query+"&langpair="+langpair;
-            HttpClient hc = new DefaultHttpClient();
-            HttpGet hg = new HttpGet(url);
-            HttpResponse hr = hc.execute(hg);
-            if(hr.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-                JSONObject response = new JSONObject(EntityUtils.toString(hr.getEntity()));
-                ans = response.getJSONObject("responseData").getString("translatedText");
+            String urlString = "http://mymemory.translated.net/api/get?q="+query+"&langpair="+langpair;
+            URL url = new URL(urlString);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            if(conn.getResponseCode() == HttpURLConnection.HTTP_OK){
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String line;
+                StringBuilder input = new StringBuilder();
+                while((line = br.readLine()) != null){
+                    input.append(line);
+                }
+                System.out.println("response: " + input);
+                return (new JSONObject(String.valueOf(input))).getJSONObject("responseData").getString("translatedText");
+            }
+            else{
+                System.out.println("http conn not formed");
+                return null;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -129,23 +139,23 @@ public class HomePageFragment extends Fragment{
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu , MenuInflater inflater )
-    {
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu,inflater);
-        inflater.inflate(R.menu.language, menu );
+        inflater.inflate(R.menu.language, menu);
     }
+    
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId() ;
-        if( id == R.id.lang_hindi)
-        {
-            to_translate = true ;
-            return true ;
-        }
-        else if( id == R.id.lang_english )
-        {
-            to_translate = false ;
+        if( id == R.id.lang) {
+            if(to_translate){
+                item.setTitle("English");
+                to_translate = false;
+            }
+            else {
+                item.setTitle("Hindi");
+                to_translate = true;
+            }
             return true ;
         }
         return super.onOptionsItemSelected(item) ;
