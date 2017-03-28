@@ -8,6 +8,14 @@
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/src/main/res/menu/language.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/menu/navbar.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/menu/navbar.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/menu/language.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/menu/language.xml"
+    },
+    {
         "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/menu/navbar.xml",
         "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/src/main/res/menu/navbar.xml"
     },

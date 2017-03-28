@@ -71,7 +71,6 @@
     <TextView
         android:id="@+id/avishek"
         android:padding="4dp"
-        android:textStyle="italic"
         fontPath="fonts/IDroid.otf"
         android:text="@string/avishek"
         android:textSize="20sp"

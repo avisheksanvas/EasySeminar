@@ -21,7 +21,7 @@
     <string name="announce">Announcements</string>
     <string name="speak">speak</string>
     <string name="warning">Say Exit To Stop</string>
-    <string name="passwordhint">Password (for root login)</string>
+    <string name="passwordhint">Your Password (for root login)</string>
     <string name="read_speech">Read Speech</string>
     <string name="event_details">Event Details</string>
 
@@ -34,4 +34,8 @@
     <string name="english">English</string>
     <string name="hindi">Hindi</string>
     <string name="french">French</string>
+    <string name="abhey_github">https://github.com/Abhey</string>
+    <string name="aditya_github">\"\"</string>
+    <string name="avishek_github">https://github.com/avisheksanvas</string>
+    <string name="prabhat_github">https://github.com/forceawakened</string>
 </resources>

@@ -5,7 +5,7 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="29151199751079"
+    timestamp="20851539473791"
     token="-669046122108290015"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -22,12 +22,40 @@
         name="verifier"
         duration="0" />
 
+    <artifact
+        location="/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+        type="RESOURCES" />
+
     <build
-        timestamp="27009484588665"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="19928408199807"
+        verifier="BINARY_MANIFEST_FILE_CHANGE" >
         <artifact
-            location="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/outputs/apk/app-debug.apk"
+            location="/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="20554474302631"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="20657110081826"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="20851539473791"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
     </build>
     <build
         timestamp="28986577025691"
@@ -45,8 +73,5 @@
             location="/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
             type="DEX" />
     </build>
-    <build
-        timestamp="29151199751079"
-        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

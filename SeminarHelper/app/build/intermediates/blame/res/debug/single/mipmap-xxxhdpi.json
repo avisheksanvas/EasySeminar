@@ -14,5 +14,9 @@
     {
         "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
         "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     }
 ]

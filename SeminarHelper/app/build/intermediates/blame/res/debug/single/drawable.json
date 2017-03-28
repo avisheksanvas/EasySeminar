@@ -4,28 +4,36 @@
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/src/main/res/drawable/background_round.xml"
     },
     {
-        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
-        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_search_api_material.xml"
-    },
-    {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
+        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_search_api_material.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/app_logo.png",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/src/main/res/drawable/app_logo.png"
     },
     {
-        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
-        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_clear_material.xml"
-    },
-    {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_go_search_api_material.xml"
     },
     {
+        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
+        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_holo_dark.xml"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_search_api_material.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/background.xml",
@@ -34,6 +42,14 @@
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
@@ -72,8 +88,16 @@
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/background3.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/drawable/background3.xml"
+    },
+    {
         "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
         "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/app_logo.png",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/drawable/app_logo.png"
     },
     {
         "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
@@ -96,12 +120,12 @@
         "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/src/main/res/drawable/ic_mic.xml"
     },
     {
-        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
-        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_ab_back_material.xml"
-    },
-    {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
+        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
@@ -128,6 +152,10 @@
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_tab_indicator_material.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ratingbar_small_material.xml"
+    },
+    {
         "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
         "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
@@ -144,16 +172,32 @@
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/src/main/res/drawable/background_round.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/drawable/design_fab_background.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
+        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_holo_light.xml"
     },
     {
         "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
         "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_dialog_material_background.xml"
     },
     {
-        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
-        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_holo_light.xml"
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
@@ -162,6 +206,10 @@
     {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/background_round.xml",
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/src/main/res/drawable/background_round.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/drawable/design_snackbar_background.xml"
     },
     {
         "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/app_logo.png",
@@ -174,6 +222,14 @@
     {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/drawable/design_fab_background.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_item_background_holo_light.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
@@ -212,6 +268,10 @@
         "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_btn_check_material.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/mic_icon.png",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/drawable/mic_icon.png"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_tick_mark_material.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_seekbar_tick_mark_material.xml"
     },
@@ -220,16 +280,20 @@
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/notification_bg_low.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_cab_background_top_material.xml"
+    },
+    {
         "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
         "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/notification_tile_bg.xml"
     },
     {
-        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
-        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_ab_back_material.xml"
-    },
-    {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
+        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
@@ -252,6 +316,10 @@
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/src/main/res/drawable/background2.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_clear_material.xml"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_dialog_material_background.xml"
     },
@@ -262,6 +330,10 @@
     {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_cab_background_internal_bg.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
@@ -316,6 +388,10 @@
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_dialog_material_background.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/drawable/navigation_empty_icon.xml"
     },
@@ -324,24 +400,32 @@
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_switch_thumb_material.xml"
     },
     {
-        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
-        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_item_background_holo_dark.xml"
-    },
-    {
         "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
         "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_text_cursor_material.xml"
     },
     {
-        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
-        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_textfield_search_material.xml"
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/background.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/drawable/background.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/background_round2.xml",
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/src/main/res/drawable/background_round2.xml"
+    },
+    {
+        "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
+        "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/navbar_bullet.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/drawable/navbar_bullet.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
@@ -352,8 +436,16 @@
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/src/main/res/drawable/mic_icon.png"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
@@ -364,12 +456,12 @@
         "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_menu_overflow_material.xml"
     },
     {
-        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
-        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_cab_background_internal_bg.xml"
-    },
-    {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
+        "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_cab_background_internal_bg.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
@@ -392,12 +484,28 @@
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_tab_indicator_material.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/ic_mic.xml",
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/src/main/res/drawable/ic_mic.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_dialog_material_background.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
@@ -412,8 +520,32 @@
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_btn_check_material.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/notification_bg.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/notification_bg.xml"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/drawable/design_fab_background.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/ic_mic.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/drawable/ic_mic.xml"
     },
     {
         "merged": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
@@ -452,6 +584,10 @@
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_clear_material.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_tick_mark_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_seekbar_tick_mark_material.xml"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/drawable/navigation_empty_icon.xml"
     },
@@ -476,6 +612,14 @@
         "source": "/Users/Avishek/Downloads/EasySeminar-master/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ratingbar_material.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_seekbar_thumb_material.xml"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_ab_back_material.xml"
     },
@@ -490,6 +634,10 @@
     {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/background_round.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/drawable/background_round.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
@@ -528,6 +676,14 @@
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_go_search_api_material.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
     },
@@ -544,6 +700,10 @@
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_item_background_holo_light.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_menu_overflow_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_menu_overflow_material.xml"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_ab_back_material.xml"
     },
@@ -552,8 +712,16 @@
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/notification_bg.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/background_round2.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/drawable/background_round2.xml"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ratingbar_material.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
@@ -564,12 +732,20 @@
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_vector_test.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
         "source": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_spinner_textfield_background_material.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/notification_bg_low.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
@@ -672,12 +848,20 @@
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_btn_borderless_material.xml"
     },
     {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/mic_icon.png",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/src/main/res/drawable/mic_icon.png"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/background3.xml",
@@ -706,6 +890,10 @@
     {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
         "source": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/drawable/navigation_empty_icon.xml"
     },
     {
         "merged": "/Users/Avishek/Desktop/HITN Project/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/background2.xml",
@@ -754,6 +942,10 @@
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
         "source": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/background2.xml",
+        "source": "/home/forceawakened/Desktop/projects/java/EasySeminar/SeminarHelper/app/src/main/res/drawable/background2.xml"
     },
     {
         "merged": "/home/forceawakened/AndroidStudioProjects/SeminarHelper/app/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",

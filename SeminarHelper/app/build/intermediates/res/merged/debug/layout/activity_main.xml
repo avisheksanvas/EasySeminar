@@ -36,5 +36,7 @@
         app:menu="@menu/navbar"
         android:choiceMode="singleChoice"
         android:background="@color/white"
+        app:itemTextColor="@color/drawer_item"
+        app:itemIconTint="@color/drawer_item"
         android:dividerHeight="1dp" />
 </android.support.v4.widget.DrawerLayout>
