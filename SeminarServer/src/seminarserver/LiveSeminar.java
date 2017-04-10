@@ -8,6 +8,8 @@ package seminarserver;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
@@ -28,28 +30,60 @@ import java.sql.*;
 import java.util.Enumeration;
 import javax.swing.JOptionPane;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
 /**
  *
  * @author abhey
  */
-public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
-    
+public class LiveSeminar extends javax.swing.JFrame implements MouseListener {
+
     public static LiveSeminar live;
-    public static Struct sbutton[]=new Struct[256];
+    public static Struct sbutton[] = new Struct[256];
     public static javax.swing.JScrollPane scroll;
-    public static javax.swing.JList<String> list;
-    public int count=0;
-    public int papacount=0;
+    public static javax.swing.JList < String > list;
+    /*It's all side effect of hackathon we don't need these much variables but still i will try my best to resolve all
+    this stuff */
+    public int count = 0;
+    public int papacount = 0;
+    public int thirdcount = 0;
     public static String password;
     public static String user;
-    public static Socket socket[]=new Socket[256];
+    public static Socket socket[] = new Socket[256];
+    public static Struct stext[] = new Struct[256];
     /**
      * Creates new form LiveSeminar
      */
     public LiveSeminar() {
-        
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        this.getContentPane().setBackground(new java.awt.Color(182, 222, 223));
+        this.addWindowListener(new WindowAdapter() {
+
+            public void windowClosing(WindowEvent e) {
+                Connection conn = MySqlConnect.connection();
+                try {
+                    PreparedStatement pst = conn.prepareStatement("Select * from unanswered");
+                    ResultSet rs = pst.executeQuery();
+                    int n = 0;
+                    while (rs.next()) {
+                        n++;
+                    }
+                    int index = list.getLastVisibleIndex();
+                    String str;
+                    for (int i = 0; i <= index; i++) {
+                        str = "Insert into unanswered values('" + (n + index) + "','" + Login.userid + "','" + LiveSeminar.sbutton[index].ques + "','" + LiveSeminar.sbutton[index].email + "')";
+                        conn.createStatement().execute(str);
+                    }
+                    System.out.print("Everything closed manully by me");
+                    System.exit(0);
+                } catch (Exception ex) {
+                    System.out.println(ex + "Error Occurred");
+                }
+            }
+        });
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (javax.swing.UIManager.LookAndFeelInfo info: javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("GTK+".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
@@ -65,33 +99,49 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
             java.util.logging.Logger.getLogger(LiveSeminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         initComponents();
-        list=this.jList1;
+        list = this.jList1;
+        Question.getContentPane().setBackground(new java.awt.Color(182, 222, 223));
         this.jList1.addMouseListener(this);
-        live=this;
-        Runtime run= Runtime.getRuntime();
-        try{
-            user=JOptionPane.showInputDialog("Enter user name");
-            password=JOptionPane.showInputDialog("Enter root password");
-            //String[] cmd = { "echo uselesscoder | sudo -S /etc/init.d/vsftpd restart"};
-            Process proc = run.exec("echo "+password+" | sudo -S /etc/init.d/vsftpd restart");
-            proc.waitFor();
-            Scanner scan = new Scanner(proc.getErrorStream());
-            if(scan.hasNext()){
-                System.out.println(scan.next());
-                JOptionPane.showMessageDialog(null,"Sorry you entered wrong username and password.");
+        live = this;
+        Runtime run = Runtime.getRuntime();
+        try {
+            user = JOptionPane.showInputDialog("Enter user name");
+            if (user != null) {
+                password = JOptionPane.showInputDialog("Enter root password");
+                String command = "echo " + password + " | sudo -S /etc/init.d/vsftpd restart";
+                String[] cmd = {
+                    "/bin/bash",
+                    "-c",
+                    command
+                };
+                Process proc = run.exec(cmd, null, new java.io.File("/home/" + user));
+                Scanner scan = new Scanner(proc.getInputStream());
+                proc.waitFor();
+                if (!scan.hasNext()) {
+                    JOptionPane.showMessageDialog(null, "Sorry you entered wrong username or password.");
+                    System.exit(0);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "You must specify a user name");
                 System.exit(0);
             }
-        }
-        catch(Exception e){
-            System.out.println(e+"Error Occurred");
+        } catch (java.io.IOException e) {
+            JOptionPane.showMessageDialog(null, "Please check that you have entered right username and password and that your PC conforms to requirements.");
+            System.exit(0);
+        } catch (Exception e) {
+            System.out.println(e + "Error Occurred");
             System.exit(0);
         }
-        
+
     }
-    public void setData(String str){
-        this.TextArea.append(str+"\n");
+    public void setData(String str) {
+        this.TextArea.append(str + "\n");
     }
-    
+
+    public void letsClear() {
+        this.TextArea.setText("");
+    }
+
     /*
     public void addListener(int index){
         LiveSeminar.sbutton[index].button.addMouseListener(this);
@@ -122,11 +172,11 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         Question.setLocation(new java.awt.Point(450, 300));
-        Question.setMaximumSize(new java.awt.Dimension(550, 95));
         Question.setMinimumSize(new java.awt.Dimension(550, 95));
-        Question.setPreferredSize(new java.awt.Dimension(550, 95));
 
         jButton3.setText("Answer To All");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -161,11 +211,11 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         QuestionLayout.setHorizontalGroup(
             QuestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(QuestionLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(jButton6)
-                .addGap(45, 45, 45)
+                .addGap(51, 51, 51)
                 .addComponent(jButton4)
                 .addGap(28, 28, 28)
                 .addComponent(jButton5)
@@ -184,11 +234,10 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         );
 
         Open.setLocation(new java.awt.Point(500, 200));
-        Open.setMaximumSize(new java.awt.Dimension(460, 420));
         Open.setMinimumSize(new java.awt.Dimension(460, 420));
-        Open.setPreferredSize(new java.awt.Dimension(460, 420));
         Open.setResizable(false);
 
+        OpenFile.setName(""); // NOI18N
         OpenFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OpenFileActionPerformed(evt);
@@ -213,13 +262,14 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Live Seminar");
         setLocation(new java.awt.Point(350, 100));
-        setMaximumSize(new java.awt.Dimension(780, 570));
-        setMinimumSize(new java.awt.Dimension(780, 570));
-        setPreferredSize(new java.awt.Dimension(780, 570));
+        setMaximumSize(new java.awt.Dimension(675, 490));
+        setMinimumSize(new java.awt.Dimension(675, 490));
+        setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        jLabel1.setText("Email ID Of Connected Users");
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabel1.setText("Live Seminar Server");
 
         TextArea.setEditable(false);
         TextArea.setColumns(20);
@@ -227,11 +277,12 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         TextArea.setRows(5);
         jScrollPane1.setViewportView(TextArea);
 
-        jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel2.setText("Question Being Asked");
 
         jButton1.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
-        jButton1.setText("Transfer Files To Connected Users");
+        jButton1.setText("Transfer Files");
+        jButton1.setToolTipText("Please make sure that the are files you  want to send are in users home directory.");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -239,6 +290,11 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
         });
 
         jButton2.setText("Close This Connection");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(jList1);
@@ -250,231 +306,304 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
             }
         });
 
+        jButton8.setText("Get IP");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabel3.setText("Email ID Of Connected Users");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1))
+                        .addComponent(jButton1)
+                        .addGap(69, 69, 69)
+                        .addComponent(jButton7)
+                        .addGap(48, 48, 48)
+                        .addComponent(jButton8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(70, 70, 70)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(117, 117, 117)
+                                .addComponent(jLabel2)))
+                        .addGap(0, 31, Short.MAX_VALUE)))
+                .addGap(30, 30, 30))
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addGap(103, 103, 103)
-                .addComponent(jButton2)
-                .addGap(21, 21, 21))
+                .addGap(235, 235, 235)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(4, 4, 4)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
                     .addComponent(jButton1)
-                    .addComponent(jButton7))
-                .addGap(25, 25, 25))
+                    .addComponent(jButton7)
+                    .addComponent(jButton2)
+                    .addComponent(jButton8))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here
-        int index=list.getSelectedIndex();
-        for(int i=index+1;i<count;i++){
-            LiveSeminar.sbutton[i-1]=LiveSeminar.sbutton[i];
-        }
-        count--;
-        DefaultListModel model = new DefaultListModel();
-        for(int i=0;i<count;i++){
-            model.addElement(LiveSeminar.sbutton[i].ques);
-        }
-        LiveSeminar.list.setModel(model);
-        Question.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+            // TODO add your handling code here
+            int index = list.getSelectedIndex();
+            String question = sbutton[index].ques;
+            String answer = JOptionPane.showInputDialog("Type your answer here");
+            BufferedReader br = null;
+            PrintWriter p = null;
+            if (answer == null)
+                return;
+            else {
+                try {
+                    Socket sock = null;
+                    for (int i = 0; i <= LiveSeminar.live.papacount; i++) {
+                        sock = LiveSeminar.socket[i];
+                        if (!sock.isClosed()) {
+                            p = new PrintWriter(sock.getOutputStream());
+                            /*
+                            p.println("QUER:2" + question);
+                            p.println("QUER:3Ans. " + answer);
+                            */
+                            p.println("QUER:2"+question+"&^%"+answer);
+                        }
+                    }
+                    for (int i = index + 1; i < count; i++) {
+                        LiveSeminar.sbutton[i - 1] = LiveSeminar.sbutton[i];
+                    }
+                    count--;
+                    DefaultListModel model = new DefaultListModel();
+                    for (int i = 0; i < count; i++) {
+                        model.addElement(LiveSeminar.sbutton[i].ques);
+                    }
+                    LiveSeminar.list.setModel(model);
+                    Question.setVisible(false);
+                } catch (Exception e) {
+                    System.out.println(e + "Exception occurred while answering all");
+                }
+            }
+        }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        int index=list.getSelectedIndex();
-        for(int i=index+1;i<count;i++){
-            LiveSeminar.sbutton[i-1]=LiveSeminar.sbutton[i];
-        }
-        count--;
-        DefaultListModel model = new DefaultListModel();
-        for(int i=0;i<count;i++){
-                   model.addElement(LiveSeminar.sbutton[i].ques);
-        }
-        LiveSeminar.list.setModel(model);
-        Question.setVisible(false);
-    }//GEN-LAST:event_jButton6ActionPerformed
+            // TODO add your handling code here:
+            int index = list.getSelectedIndex();
+            for (int i = index + 1; i < count; i++) {
+                LiveSeminar.sbutton[i - 1] = LiveSeminar.sbutton[i];
+            }
+            count--;
+            DefaultListModel model = new DefaultListModel();
+            for (int i = 0; i < count; i++) {
+                model.addElement(LiveSeminar.sbutton[i].ques);
+            }
+            LiveSeminar.list.setModel(model);
+            Question.setVisible(false);
+        }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        Connection conn=MySqlConnect.connection();
-        try{
-            int index=list.getSelectedIndex();
-            PreparedStatement pst = conn.prepareStatement("Select * from unanswered");
-            ResultSet rs = pst.executeQuery();
-            int n = 0 ;
-            while(rs.next())
-            {
-                n++;
+            // TODO add your handling code here:
+            Connection conn = MySqlConnect.connection();
+            try {
+                int index = list.getSelectedIndex();
+                PreparedStatement pst = conn.prepareStatement("Select * from unanswered");
+                ResultSet rs = pst.executeQuery();
+                int n = 0;
+                while (rs.next()) {
+                    n++;
+                }
+                String sql = "Insert into unanswered values('" + n + "','" + Login.userid + "','" + LiveSeminar.sbutton[index].ques + "','" + LiveSeminar.sbutton[index].email + "')";
+                conn.createStatement().execute(sql);
+                for (int i = index + 1; i < count; i++) {
+                    LiveSeminar.sbutton[i - 1] = LiveSeminar.sbutton[i];
+                }
+                count--;
+                DefaultListModel model = new DefaultListModel();
+                for (int i = 0; i < count; i++) {
+                    model.addElement(LiveSeminar.sbutton[i].ques);
+                }
+                LiveSeminar.list.setModel(model);
+                Question.setVisible(false);
+            } catch (Exception e) {
+                System.out.println("Error Occurred");
             }
-            String sql="Insert into unanswered values('"+n+"','"+Login.userid+"','"+LiveSeminar.sbutton[index].ques+"','"+LiveSeminar.sbutton[index].email+"')";
-            conn.createStatement().execute(sql);
-        for(int i=index+1;i<count;i++){
-            LiveSeminar.sbutton[i-1]=LiveSeminar.sbutton[i];
-            }
-        count--;
-        DefaultListModel model = new DefaultListModel();
-        for(int i=0;i<count;i++){
-                   model.addElement(LiveSeminar.sbutton[i].ques);
-        }
-        LiveSeminar.list.setModel(model);
-        Question.setVisible(false);
-        }
-        catch(Exception e){
-            System.out.println("Error Occurred");
-        }
-    }//GEN-LAST:event_jButton5ActionPerformed
+        }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        int index=list.getSelectedIndex();
-        Socket sock = LiveSeminar.sbutton[index].sock;
-        BufferedReader br = null;
-        PrintStream p = null;
-        String temp;
-        try{
-            //br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
-            p = new PrintStream(sock.getOutputStream());
-            String output=JOptionPane.showInputDialog("Type your answer here");
-            if(output==null)
-                return;
-            else{
-                p.println("QUER:2"+sbutton[index].ques);
-                p.println("QUER:3Ans. "+output);
+            // TODO add your handling code here:
+            int index = list.getSelectedIndex();
+            Socket sock = null;
+            boolean open = false;
+            for (int i = 0; i < LiveSeminar.live.thirdcount; i++) {
+                if (LiveSeminar.sbutton[index].email.compareTo(LiveSeminar.stext[i].email) == 0) {
+                    if (!LiveSeminar.stext[i].sock.isClosed()) {
+                        sock = LiveSeminar.stext[i].sock;
+                        open = true;
+                        break;
+                    }
+                }
             }
-            for(int i=index+1;i<count;i++){
-            LiveSeminar.sbutton[i-1]=LiveSeminar.sbutton[i];
-        }
-        count--;
-        DefaultListModel model = new DefaultListModel();
-        for(int i=0;i<count;i++){
-                   model.addElement(LiveSeminar.sbutton[i].ques);
-        }
-        LiveSeminar.list.setModel(model);
-        Question.setVisible(false);
-        }
-        catch(Exception e){
-            
-        }
-    }//GEN-LAST:event_jButton4ActionPerformed
+            if (!open) {
+                JOptionPane.showMessageDialog(null, "Sorry you can't answer this question privately as user has left.\nWe have added this question in your unanswered section you\ncan reply to the user via an email.");
+            } else {
+                BufferedReader br = null;
+                PrintStream p = null;
+                String temp;
+                try {
+                    //br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+                    p = new PrintStream(sock.getOutputStream());
+                    String output = JOptionPane.showInputDialog("Type your answer here");
+                    if (output == null)
+                        return;
+                    else {
+                        //A change is intoduced here.
+                        /*
+                        p.println("QUER:2" + sbutton[index].ques);
+                        p.println("QUER:3Ans. " + output);
+                        */
+                        p.println("QUER:2"+sbutton[index].ques+"&^%"+output);
+                    }
+                    for (int i = index + 1; i < count; i++) {
+                        LiveSeminar.sbutton[i - 1] = LiveSeminar.sbutton[i];
+                    }
+                    count--;
+                    DefaultListModel model = new DefaultListModel();
+                    for (int i = 0; i < count; i++) {
+                        model.addElement(LiveSeminar.sbutton[i].ques);
+                    }
+                    LiveSeminar.list.setModel(model);
+                    Question.setVisible(false);
+                } catch (Exception e) {
+                    System.out.println(e + "Error Occurred while replying privately.");
+                }
+            }
+        }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        Open.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+            // TODO add your handling code here:
+            Open.setVisible(true);
+        }//GEN-LAST:event_jButton1ActionPerformed
 
     private static InetAddress getFirstNonLoopbackAddress(boolean preferIpv4, boolean preferIPv6) throws SocketException {
-    Enumeration en = NetworkInterface.getNetworkInterfaces();
-    while (en.hasMoreElements()) {
-        NetworkInterface i = (NetworkInterface) en.nextElement();
-        for (Enumeration en2 = i.getInetAddresses(); en2.hasMoreElements();) {
-            InetAddress addr = (InetAddress) en2.nextElement();
-            if (!addr.isLoopbackAddress()) {
-                if (addr instanceof Inet4Address) {
-                    if (preferIPv6) {
-                        continue;
+        Enumeration en = NetworkInterface.getNetworkInterfaces();
+        while (en.hasMoreElements()) {
+            NetworkInterface i = (NetworkInterface) en.nextElement();
+            for (Enumeration en2 = i.getInetAddresses(); en2.hasMoreElements();) {
+                InetAddress addr = (InetAddress) en2.nextElement();
+                if (!addr.isLoopbackAddress()) {
+                    if (addr instanceof Inet4Address) {
+                        if (preferIPv6) {
+                            continue;
+                        }
+                        return addr;
                     }
-                    return addr;
-                }
-                if (addr instanceof Inet6Address) {
-                    if (preferIpv4) {
-                        continue;
+                    if (addr instanceof Inet6Address) {
+                        if (preferIpv4) {
+                            continue;
+                        }
+                        return addr;
                     }
-                    return addr;
                 }
             }
         }
+        return null;
     }
-    return null;
-}
 
-    
+
     private void OpenFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenFileActionPerformed
-        // TODO add your handling code here:
-        if(evt.getActionCommand().compareTo("CancelSelection")==0){
-            Open.setVisible(false);
-        }
-        else {
-        File file= OpenFile.getSelectedFile();
-        String Path = file.getAbsolutePath();
-        String base = "/home/"+user;
-        String relative = new File(base).toURI().relativize(new File(Path).toURI()).getPath();
-        try{
-            InetAddress inet = LiveSeminar.getFirstNonLoopbackAddress(true,false);
-            String temp=inet.toString().substring(1);
-            String fttpPath="FILE:ftp://"+user+":"+password+"@"+temp+"/"+relative;
-            BufferedReader br = null;
-            PrintStream p = null;
-            for(int i=0;i<papacount;i++){
-                Socket sock = LiveSeminar.sbutton[i].sock;
-                br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
-                p = new PrintStream(sock.getOutputStream());
-                p.println(fttpPath);
-                System.out.println(fttpPath+"Sccuess");
+            // TODO add your handling code here:
+            if (evt.getActionCommand().compareTo("CancelSelection") == 0) {
+                Open.setVisible(false);
+            } else {
+                File file = OpenFile.getSelectedFile();
+                String Path = file.getAbsolutePath();
+                String base = "/home/" + user;
+                String relative = new File(base).toURI().relativize(new File(Path).toURI()).getPath();
+                try {
+                    InetAddress inet = LiveSeminar.getFirstNonLoopbackAddress(true, false);
+                    String temp = inet.toString().substring(1);
+                    String fttpPath = "FILE:ftp://" + user + ":" + password + "@" + temp + "/" + relative;
+                    BufferedReader br = null;
+                    PrintStream p = null;
+                    for (int i = 0; i <= papacount; i++) {
+                        //System.out.println(LiveSeminar.sbutton[i].email);
+                        Socket sock = LiveSeminar.socket[i];
+                        br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+                        p = new PrintStream(sock.getOutputStream());
+                        p.println(fttpPath);
+                        System.out.println(fttpPath + "Sccuess");
+                    }
+                } catch (Exception e) {
+                    System.out.println(e + "Error Occurred");
+                }
+                Open.setVisible(false);
             }
-        }
-        catch(Exception e){
-            System.out.println(e+"Error Occurred");
-        }
-        Open.setVisible(false);
-        }
-    }//GEN-LAST:event_OpenFileActionPerformed
+        }//GEN-LAST:event_OpenFileActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-        String str=JOptionPane.showInputDialog("Enter your announcement here");
-        BufferedReader br = null;
-        PrintStream p = null;
-        try{
-            Socket sock;
-            for(int i=0;i<papacount;i++){
-                sock = LiveSeminar.sbutton[i].sock;
-                br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
-                p = new PrintStream(sock.getOutputStream());
-                p.println("ANNO:"+str);
-                System.out.println(str+"SUCCESS");
+            // TODO add your handling code here:
+            String str = JOptionPane.showInputDialog("Enter your announcement here");
+            BufferedReader br = null;
+            PrintStream p = null;
+            //System.out.println(papacount);
+            try {
+                Socket sock;
+                for (int i = 0; i <= papacount; i++) {
+                    sock = LiveSeminar.socket[i];
+                    //br = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+                    p = new PrintStream(sock.getOutputStream());
+                    p.println("ANNO:" + str);
+                    p.flush();
+                    System.out.println(str + "SUCCESS");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println(e + "Error Occurred Here");
             }
-        }
-        catch(Exception e){
-            System.out.println(e+"Error Occurred");
-        }
-    }//GEN-LAST:event_jButton7ActionPerformed
+        }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+            // TODO add your handling code here:
+            this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+        }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+            try {
+                // TODO add your handling code here:
+                InetAddress addr = LiveSeminar.getFirstNonLoopbackAddress(true, false);
+                String IP = addr.toString().substring(1);
+                JOptionPane.showMessageDialog(null, "IP Address is: " + IP + "\nPort is: 1342");
+            } catch (SocketException ex) {
+                Logger.getLogger(LiveSeminar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -486,7 +615,7 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (javax.swing.UIManager.LookAndFeelInfo info: javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("GTK+".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
@@ -523,8 +652,10 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -532,7 +663,7 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(e.getClickCount()==2&&this.jList1.getSelectedIndex()>=0){
+        if (e.getClickCount() == 2 && this.jList1.getSelectedIndex() >= 0) {
             Question.setVisible(true);
         }
         //To change body of generated methods, choose Tools | Templates.
@@ -557,8 +688,4 @@ public class LiveSeminar extends javax.swing.JFrame implements MouseListener{
     public void mouseExited(MouseEvent e) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-   
-
- 
 }

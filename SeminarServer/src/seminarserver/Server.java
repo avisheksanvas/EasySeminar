@@ -21,12 +21,13 @@ public class Server
             ServerSocket s1 = new ServerSocket(1342);
             while( true )
             {
-                i++;
-                LiveSeminar.live.papacount=i;
+                //LiveSeminar.live.papacount=i;
                 Socket ss = s1.accept();
+                LiveSeminar.live.papacount=i;
                 LiveSeminar.socket[i]=ss;
                 ListenThread t1 = new ListenThread(ss,i);
                 t1.start();
+                i++;
             }
         }
         catch(IOException e)
