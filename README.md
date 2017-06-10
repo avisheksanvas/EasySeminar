@@ -1,5 +1,4 @@
 # EasySeminar
-![SeminarHelper Logo](https://github.com/Abhey/EasySeminar/blob/master/Logo.png)
 
 # THE IDEA
 Ever felt that seminars, presentations, workshops, private meetings and
@@ -16,16 +15,11 @@ sessions making it more easier for them to understand concepts.
 * This android app lets the audience to ask questions from the speaker helping them to get better understanding of concepts.
 * This android app also notifies about various announcements being done by the speaker
 * With the help of this android app user can also download various resources being shared by the speaker.
-![Screenshots1 Android Side](https://github.com/forceawakened/EasySeminar/raw/master/nav_bar.png)
-![Screenshots2 Android Side](https://github.com/forceawakened/EasySeminar/raw/master/query_fragment.png)
-![Screenshots2 Android Side](https://github.com/forceawakened/EasySeminar/raw/master/login_activity.png)
 
 # SEMINAR SERVER PC APPLICATION
 * This application helps the speaker to send files to audience which might help them in future.
 * This application helps the speaker to answer queries of the audience in a more organized manner.
 * This application also helps the user in managing notes in a very easy manner.
-![Screenshots1 PC Side](https://github.com/Abhey/EasySeminar/blob/master/Screenshots/Pic1.png)
-![Screenshots2 PC Side](https://github.com/Abhey/EasySeminar/blob/master/Screenshots/Pic3.png)
 
 # IMPLEMENTATIONS OF THIS PROJECT
 * Going by name this project makes it easier to organize seminars,confrences and workshops.
