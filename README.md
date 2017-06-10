@@ -1,5 +1,3 @@
-# EasySeminar
-
 # THE IDEA
 Ever felt that seminars, presentations, workshops, private meetings and
 lectures should be digitalised, this is exactly on what this application is based
